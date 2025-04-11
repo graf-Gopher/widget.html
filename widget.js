@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.head.appendChild(link);
         });
 
-        // const scripts = ["./script.js", `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
-        const scripts = ["./script.js"];
+        const scripts = ["./script.js", `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
+        // const scripts = ["./script.js"];
         scripts.forEach((scriptHref) => {
             const script = document.createElement("script");
             script.src = scriptHref;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div dir="ltr" class="callback-widget-button-wrapper callback-widget-button-position-bottom-right callback-widget-button-visible">
                 <div class="callback-widget-button-social callback-widget-button-hide">
                     <a
-                        class="callback-widget-button-social-item callback-widget-button-openline_livechat"
+                        class="callback-widget-button-social-item callback-widget-button-openline_livechat openerp o_livechat_button d-print-none o_website_livechat_button o-isExternalLib"
                         title=""
                         style="
                             background-color: rgb(255, 91, 85);
