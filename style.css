@@ -1,3 +1,6 @@
 .o_website_livechat_button {
     display: none !important;
 }
+.o_thread_window.o_in_home_menu {
+    z-index: 99999 !important;
+}
