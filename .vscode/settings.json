@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.https": {
+        "enable": true, //set it true to enable the feature.  
+        "cert": "/mnt/T7/projects/box_catering/widget.html/server.crt", //full path of the certificate  
+        "key": "/mnt/T7/projects/box_catering/widget.html/server.key", //full path of the private key  
+        "passphrase": "localhost"
+    }
+}
