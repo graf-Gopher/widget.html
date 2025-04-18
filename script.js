@@ -9,8 +9,8 @@ function getUTMParams() {
     return utmParams.length ? utmParams.join("&") : "";
 }
 
-function sendUTMParams(link) {
-    console.log(link);
+function sendUTMParams(link, action) {
+    // console.log(link);
 
     const utmQuery = getUTMParams();
     if (!utmQuery) return;
@@ -22,6 +22,7 @@ function sendUTMParams(link) {
     }, {});
 
     utmQueryObject.uid = uid;
+    utmQueryObject.action = action;
 
     let postToOdoo = async () => {
         const response = await fetch(link, {
@@ -83,15 +84,16 @@ widget.onclick = function () {
 };
 
 const telegram = document.querySelector("#telegram-btn");
+// widget_chat_open_click
 telegram.onclick = function () {
-    sendUTMParams(lsodoo);
+    sendUTMParams(lsodoo, "widget_Telegram_click");
 };
 const viber = document.querySelector("#viber-btn");
 viber.onclick = function () {
-    sendUTMParams(lsodoo);
+    sendUTMParams(lsodoo, "widget_viber_click");
 };
 const facebook = document.querySelector("#messenger-btn");
 facebook.onclick = function () {
-    sendUTMParams(lsodoo);
+    sendUTMParams(lsodoo, "widget_facebook_click");
 };
 // });

@@ -1,5 +1,18 @@
-const scriptTag = document.currentScript;
-document.addEventListener("DOMContentLoaded", () => {
+console.log(111);
+// const scriptTag = document.currentScript;
+const scriptTag = Array.from(document.getElementsByTagName("script")).find((s) => s.src.includes("widget.js"));
+
+// const scripts = document.querySelectorAll('script[src*="widget.js"]');
+// const scriptTag = scripts[scripts.length - 1];
+
+console.log(scriptTag);
+
+loadWidget(scriptTag);
+
+// document.addEventListener("load", () => {
+function loadWidget(scriptTag) {
+    console.log(222);
+
     const odoo = scriptTag.getAttribute("data-odo") || "#";
 
     // if (location.host !== odoo) {
@@ -138,4 +151,5 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         document.body.appendChild(widget);
     })();
-});
+}
+// });
