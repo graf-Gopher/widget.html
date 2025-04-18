@@ -4,14 +4,14 @@ loadWidget(scriptTag);
 
 function loadWidget(scriptTag) {
     const odoo = scriptTag.getAttribute("data-odo") || "#";
-
+    const files = scriptTag.getAttribute("data-files") || "#";
     const title = scriptTag.getAttribute("data-title") || "#";
     const telegram = scriptTag.getAttribute("data-tel") || "#";
     const viber = scriptTag.getAttribute("data-vib") || "#";
     const facebook = scriptTag.getAttribute("data-fac") || "#";
 
     (async function () {
-        const styles = ["./call_style.min.css", "./ui_style.min.css", `${odoo}/im_livechat/external_lib.css`, "./style.css"];
+        const styles = [`${files}/call_style.min.css`, `${files}/ui_style.min.css`, `${odoo}/im_livechat/external_lib.css`, `${files}/style.css`];
         styles.forEach((styleHref) => {
             const link = document.createElement("link");
             link.rel = "stylesheet";
@@ -19,7 +19,7 @@ function loadWidget(scriptTag) {
             document.head.appendChild(link);
         });
 
-        const scripts = ["./script.js", `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
+        const scripts = [`${files}/script.js`, `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
         scripts.forEach((scriptHref) => {
             const script = document.createElement("script");
             script.src = scriptHref;
