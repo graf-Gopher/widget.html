@@ -1,24 +1,9 @@
-console.log(111);
-// const scriptTag = document.currentScript;
 const scriptTag = Array.from(document.getElementsByTagName("script")).find((s) => s.src.includes("widget.js"));
-
-// const scripts = document.querySelectorAll('script[src*="widget.js"]');
-// const scriptTag = scripts[scripts.length - 1];
-
-console.log(scriptTag);
 
 loadWidget(scriptTag);
 
-// document.addEventListener("load", () => {
 function loadWidget(scriptTag) {
-    console.log(222);
-
     const odoo = scriptTag.getAttribute("data-odo") || "#";
-
-    // if (location.host !== odoo) {
-    //     console.error("Callback widget: Cors error");
-    //     return false;
-    // }
 
     const title = scriptTag.getAttribute("data-title") || "#";
     const telegram = scriptTag.getAttribute("data-tel") || "#";
@@ -35,7 +20,6 @@ function loadWidget(scriptTag) {
         });
 
         const scripts = ["./script.js", `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
-        // const scripts = ["./script.js"];
         scripts.forEach((scriptHref) => {
             const script = document.createElement("script");
             script.src = scriptHref;
@@ -152,4 +136,3 @@ function loadWidget(scriptTag) {
         document.body.appendChild(widget);
     })();
 }
-// });
