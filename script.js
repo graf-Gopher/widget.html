@@ -60,7 +60,8 @@ function sendUTMParams(link, action) {
 const lscriptTag = document.currentScript;
 const lsodoo = lscriptTag.getAttribute("data-odoo") || "#";
 
-const uid = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16));
+// const uid = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16));
+const uid = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (+c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (+c / 4)))).toString(16));
 
 // document.addEventListener("DOMContentLoaded", function (event) {
 
