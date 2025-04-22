@@ -28,18 +28,13 @@ function sendUTMParams(link, action) {
     let postToOdoo = async () => {
         const response = await fetch(link, {
             method: "POST",
-            mode: "no-cors",
-            cache: "no-cache",
             headers: {
                 "Content-Type": "application/json",
             },
-            redirect: "follow",
-            referrerPolicy: "no-referrer",
-            body: {
+            body: JSON.stringify({
                 jsonrpc: "2.0",
                 params: utmQueryObject,
-            },
-            // body: JSON.stringify(utmQueryObject),
+            }),
         });
         return await response;
     };
