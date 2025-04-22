@@ -4,6 +4,7 @@ loadWidget(scriptTag);
 
 function loadWidget(scriptTag) {
     const odoo = scriptTag.getAttribute("data-odo") || "#";
+    const odooMethod = scriptTag.getAttribute("data-odoo") || "#";
     const files = scriptTag.getAttribute("data-files") || "#";
     const title = scriptTag.getAttribute("data-title") || "#";
     const telegram = scriptTag.getAttribute("data-tel") || "#";
@@ -25,7 +26,7 @@ function loadWidget(scriptTag) {
         scripts.forEach((scriptHref) => {
             const script = document.createElement("script");
             script.src = scriptHref;
-            script.setAttribute("data-odoo", odoo);
+            script.setAttribute("data-odoo", odooMethod);
             document.head.appendChild(script);
         });
 

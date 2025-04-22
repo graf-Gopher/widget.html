@@ -10,16 +10,17 @@ function getUTMParams() {
 }
 
 function sendUTMParams(link, action) {
-    // console.log(link);
-
     const utmQuery = getUTMParams();
-    if (!utmQuery) return;
 
-    let utmQueryObject = utmQuery.split("&").reduce((acc, param) => {
-        const [key, value] = param.split("=");
-        acc[key] = decodeURIComponent(value);
-        return acc;
-    }, {});
+    let utmQueryObject = {};
+
+    if (utmQuery) {
+        utmQueryObject = utmQuery.split("&").reduce((acc, param) => {
+            const [key, value] = param.split("=");
+            acc[key] = decodeURIComponent(value);
+            return acc;
+        }, {});
+    }
 
     utmQueryObject.uid = uid;
     utmQueryObject.action = action;
@@ -34,7 +35,11 @@ function sendUTMParams(link, action) {
             },
             redirect: "follow",
             referrerPolicy: "no-referrer",
-            body: JSON.stringify(utmQueryObject),
+            body: {
+                jsonrpc: "2.0",
+                params: utmQueryObject,
+            },
+            // body: JSON.stringify(utmQueryObject),
         });
         return await response;
     };
@@ -84,6 +89,7 @@ widget.onclick = function () {
 };
 
 const telegram = document.querySelector("#telegram-btn");
+
 // widget_chat_open_click
 telegram.onclick = function () {
     sendUTMParams(lsodoo, "widget_Telegram_click");
