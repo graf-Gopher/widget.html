@@ -20,12 +20,39 @@ function loadWidget(scriptTag) {
         });
 
         const scripts = [`${files}/script.js`, `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
+        // const scripts = [`${files}/script.js`, `${odoo}/im_livechat/external_lib.js`];
+        // const scripts = [`${files}/script.js`];
         scripts.forEach((scriptHref) => {
             const script = document.createElement("script");
             script.src = scriptHref;
             script.setAttribute("data-odoo", odoo);
-            document.body.appendChild(script);
+            document.head.appendChild(script);
         });
+
+        // setTimeout(() => {
+        //     const loadEvent = new Event("load");
+        //     window.dispatchEvent(loadEvent);
+        // }, 1000);
+
+        // setTimeout(() => {
+        //     const script = document.createElement("script");
+        //     script.src = `${odoo}/im_livechat/loader/1`;
+        //     // script.setAttribute("data-odoo", odoo);
+        //     document.head.appendChild(script);
+        // }, 1000);
+        // odoo.define("im_livechat.loaderData", function () {
+        //     return {
+        //         isAvailable: false,
+        //         serverUrl: "https://erp.box-catering.ua",
+        //         options: {},
+        //     };
+        // });
+        // setTimeout(() => {
+        //     const script = document.createElement("script");
+        //     script.src = `${odoo}/im_livechat/external_lib.js`;
+        //     // script.setAttribute("data-odoo", odoo);
+        //     document.head.appendChild(script);
+        // }, 1500);
 
         const widget = document.createElement("div");
         widget.id = "callback-widget";
