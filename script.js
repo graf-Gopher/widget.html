@@ -69,6 +69,10 @@ function genUID() {
     const uid = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (+c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (+c / 4)))).toString(16));
 
     if (uid) {
+        document.getElementById("telegram-btn").href = document.getElementById("telegram-btn").href.split("?start=")[0];
+        document.getElementById("viber-btn").href = document.getElementById("viber-btn").href.split("&context=")[0];
+        document.getElementById("messenger-btn").href = document.getElementById("messenger-btn").href.split("?ref=")[0];
+
         document.getElementById("telegram-btn").href += `?start=${uid}`;
         document.getElementById("viber-btn").href += `&context=${uid}`;
         document.getElementById("messenger-btn").href += `?ref=${uid}`;
