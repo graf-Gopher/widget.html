@@ -25,6 +25,8 @@ function sendUTMParams(link, action) {
     utmQueryObject.uid = uid;
     utmQueryObject.action = action;
 
+    uid = genUID();
+
     let postToOdoo = async () => {
         const response = await fetch(link, {
             method: "POST",
@@ -61,15 +63,25 @@ const lscriptTag = document.currentScript;
 const lsodoo = lscriptTag.getAttribute("data-odoo") || "#";
 
 // const uid = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16));
-const uid = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (+c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (+c / 4)))).toString(16));
+let uid = genUID();
+
+function genUID() {
+    const uid = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (+c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (+c / 4)))).toString(16));
+
+    if (uid) {
+        document.getElementById("telegram-btn").href += `?start=${uid}`;
+        document.getElementById("viber-btn").href += `&context=${uid}`;
+        document.getElementById("messenger-btn").href += `?ref=${uid}`;
+    }
+}
 
 // document.addEventListener("DOMContentLoaded", function (event) {
 
-if (uid) {
-    document.getElementById("telegram-btn").href += `?start=${uid}`;
-    document.getElementById("viber-btn").href += `&context=${uid}`;
-    document.getElementById("messenger-btn").href += `?ref=${uid}`;
-}
+// if (uid) {
+//     document.getElementById("telegram-btn").href += `?start=${uid}`;
+//     document.getElementById("viber-btn").href += `&context=${uid}`;
+//     document.getElementById("messenger-btn").href += `?ref=${uid}`;
+// }
 
 const widget = document.querySelector(".callback-widget-button-wrapper");
 widget.onclick = function () {
