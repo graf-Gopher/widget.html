@@ -73,6 +73,7 @@ function genUID() {
         document.getElementById("viber-btn").href += `&context=${uid}`;
         document.getElementById("messenger-btn").href += `?ref=${uid}`;
     }
+    return uid;
 }
 
 // document.addEventListener("DOMContentLoaded", function (event) {
