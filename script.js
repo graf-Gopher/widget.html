@@ -25,7 +25,7 @@ function sendUTMParams(link, action) {
     utmQueryObject.uid = uid;
     utmQueryObject.action = action;
 
-    uid = genUID();
+    // uid = genUID();
 
     let postToOdoo = async () => {
         const response = await fetch(link, {
