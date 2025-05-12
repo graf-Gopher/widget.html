@@ -20,40 +20,14 @@ function loadWidget(scriptTag) {
             document.head.appendChild(link);
         });
 
-        const scripts = [`${files}/script.js`, `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
-        // const scripts = [`${files}/script.js`, `${odoo}/im_livechat/external_lib.js`];
-        // const scripts = [`${files}/script.js`];
+        // const scripts = [`${files}/script.js`, `${odoo}/im_livechat/external_lib.js`, `${odoo}/im_livechat/loader/1`];
+        const scripts = [`${files}/script.js`];
         scripts.forEach((scriptHref) => {
             const script = document.createElement("script");
             script.src = scriptHref;
             script.setAttribute("data-odoo", odooMethod);
             document.head.appendChild(script);
         });
-
-        // setTimeout(() => {
-        //     const loadEvent = new Event("load");
-        //     window.dispatchEvent(loadEvent);
-        // }, 1000);
-
-        // setTimeout(() => {
-        //     const script = document.createElement("script");
-        //     script.src = `${odoo}/im_livechat/loader/1`;
-        //     // script.setAttribute("data-odoo", odoo);
-        //     document.head.appendChild(script);
-        // }, 1000);
-        // odoo.define("im_livechat.loaderData", function () {
-        //     return {
-        //         isAvailable: false,
-        //         serverUrl: "https://erp.box-catering.ua",
-        //         options: {},
-        //     };
-        // });
-        // setTimeout(() => {
-        //     const script = document.createElement("script");
-        //     script.src = `${odoo}/im_livechat/external_lib.js`;
-        //     // script.setAttribute("data-odoo", odoo);
-        //     document.head.appendChild(script);
-        // }, 1500);
 
         const widget = document.createElement("div");
         widget.id = "callback-widget";
@@ -69,7 +43,7 @@ function loadWidget(scriptTag) {
 
             <div dir="ltr" class="callback-widget-button-wrapper callback-widget-button-position-bottom-right callback-widget-button-visible">
                 <div class="callback-widget-button-social callback-widget-button-hide">
-                    <a
+                    <!--<a
                         class="callback-widget-button-social-item callback-widget-button-openline_livechat"
                         title=""
                         style="
@@ -80,7 +54,8 @@ function loadWidget(scriptTag) {
                     >
                         <i></i>
                         <span class="callback-widget-button-social-tooltip">${title} - Chat</span> </a
-                    ><a
+                    >-->
+                    <a
                         class="callback-widget-button-social-item ui-icon ui-icon-service-fb connector-icon-45"
                         title=""
                         href="${facebook}"
