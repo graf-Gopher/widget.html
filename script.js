@@ -24,6 +24,7 @@ function sendUTMParams(link, action) {
 
     utmQueryObject.uid = uid;
     utmQueryObject.action = action;
+    utmQueryObject.ga_session = localStorage.getItem("ga4_session_id") ?? "";
 
     // uid = genUID();
 
