@@ -25,6 +25,7 @@ function sendUTMParams(link, action) {
     utmQueryObject.uid = uid;
     utmQueryObject.action = action;
     utmQueryObject.ga_session = localStorage.getItem("ga4_session_id") ?? "";
+    utmQueryObject.site = location.hostname ?? window.location.hostname ?? "domain_detect_blocked";
 
     // uid = genUID();
 
