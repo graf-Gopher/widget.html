@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const config = await fetch("./cherries.json").then((r) => r.json());
         const currentPage = window.location.pathname;
+        console.log(currentPage);
+
         const pageConfig = config.find((p) => p.page === currentPage);
         const totalCherries = 25;
         // const totalCherries = pageConfig.cherries.length;
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     email: user,
                     found: cherriesFound,
                 }),
+                redirect: "follow",
             });
             alert("Результат відправлено менеджеру!");
         });
