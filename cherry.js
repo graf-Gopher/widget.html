@@ -45,15 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.getElementById("send-cherry").addEventListener("click", async () => {
-            await fetch("https://script.google.com/macros/s/AKfycbw8xv1rJBdNo7xUgQl2lJFq3julqF_wtkaw186dKMZw0X4iwnAe0Zjbz3hnq3daWqvA8g/exec", {
+            const res = await fetch("https://script.google.com/macros/s/AKfycbw8xv1rJBdNo7xUgQl2lJFq3julqF_wtkaw186dKMZw0X4iwnAe0Zjbz3hnq3daWqvA8g/exec", {
                 method: "POST",
                 headers: { "Content-Type": "text/plain;charset=utf-8" },
                 body: JSON.stringify({
-                    email: user,
+                    user: user,
                     found: cherriesFound,
                 }),
                 redirect: "follow",
             });
+            console.log(res);
+
             alert("Результат відправлено менеджеру!");
         });
     })();
