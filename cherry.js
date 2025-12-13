@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // const user = window.__userData.email;
         const user = "test email";
 
-        const config = await fetch("/cherries.json").then((r) => r.json());
+        const config = await fetch("./cherries.json").then((r) => r.json());
         const currentPage = window.location.pathname;
         const pageConfig = config.find((p) => p.page === currentPage);
         const totalCherries = 25;
