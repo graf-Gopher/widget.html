@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cherry.style.left = pos.x + "px";
                 cherry.style.top = pos.y + "px";
                 cherry.style.cursor = "pointer";
-                cherry.style.fontSize = "24px";
+                cherry.style.fontSize = "32px";
                 cherry.style.zIndex = "9999";
                 cherry.addEventListener("click", () => {
                     cherriesFound++;
