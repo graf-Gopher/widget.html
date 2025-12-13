@@ -16,7 +16,7 @@
 
 .cherry_block,
 .cherry {
-    display: none;
+    /* display: none; */
 }
 
 .cherry_block:hover {
