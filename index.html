@@ -1,10 +1,69 @@
-<html>
+<html style="background-color: blueviolet">
     <head>
         <!-- <link rel="stylesheet" href="https://box-catering-test.it-artel.ua/im_livechat/external_lib.css" />
         <script type="text/javascript" src="https://box-catering-test.it-artel.ua/im_livechat/loader/1"></script>
         <script type="text/javascript" src="https://box-catering-test.it-artel.ua/im_livechat/external_lib.js"></script> -->
 
         <!-- src="./widget.js" -->
+
+        <!-- {% if user %}
+        <script>
+            window.__userData = {
+                email: "{{ user.email }}",
+                name: "{{ user.name }}",
+            };
+        </script>
+        {% endif %} -->
+        <script type="text/javascript" src="./cherry.js"></script>
+        <link rel="stylesheet" href="./cherry.css"></script>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Base Snowfall -->
+        <!-- <script type="text/javascript" src="./snowfall.jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(document).snowfall({
+                    shadow: true,
+                });
+            });
+        </script> -->
+        <!-- ===== -->
+
+        <!-- Advenced Snowfall -->
+        <script type="text/javascript" src="./snowfall.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).snowfall({
+                    flakeCount: 65,
+                    flakeColor: '',
+                    flakeIndex: 0,
+                    minSize: 0,
+                    maxSize: 0,
+                    minSpeed: 0,
+                    maxSpeed: 0,
+                    round: false,
+                    shadow: false,
+                    collection: ''
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="./snow.min.css"></script>
+        <script type="text/javascript" src="./snow.min.js"></script>
+        <script>
+		    $(document).ready(function(){
+		    	new Snow ({
+					iconSize: 15,
+					countSnowflake: 65,
+					snowBallsLength: 10,
+					snowBallIterations: 40,
+					snowBallupNum: 1,
+					snowBallIterationsInterval: 1000,
+					clearSnowBalls: 10000,
+				});
+		    });
+        </script>
+        <!-- ===== -->
 
         <!-- <script
             src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/widget.js"
