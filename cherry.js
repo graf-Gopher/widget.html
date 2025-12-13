@@ -45,26 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.getElementById("send-cherry").addEventListener("click", async () => {
-            try {
-                await fetch("https://script.google.com/macros/s/AKfycbz4IrFHq6XC_BwjBH7zcrh9LDJHTJglYcU1SmWZ16ydwGshjZfp4ArTcoWvWrTf5hGpmg/exec", {
-                    method: "POST",
-                    headers: { "Content-Type": "text/plain;charset=utf-8" },
-                    body: JSON.stringify({
-                        user: user,
-                        found: cherriesFound,
-                    }),
-                    redirect: "follow",
-                });
-                alert("Результат відправлено менеджеру!");
-            } catch (e) {
-                console.log(e);
-                console.log(JSON.stringify(e, null, 2));
-                console.log(e.status);
-
-                // if (e.message) {
-                //     alert(e.message);
-                // }
-            }
+            await fetch("https://script.google.com/macros/s/AKfycbw_YpAUCga5ZowCEL2AMD695YjOzNgIxfhytPcrCMcVo9nQoR0OPgEK1D_3obwFXK6tkA/exec", {
+                method: "POST",
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify({
+                    user: user,
+                    found: cherriesFound,
+                }),
+                redirect: "follow",
+            });
+            alert("Дякуємо! Результат відправлено менеджеру!");
         });
     })();
 });
