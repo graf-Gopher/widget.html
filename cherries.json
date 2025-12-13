@@ -1,23 +1,11 @@
 [
     {
-        "page": "/",
+        "page": "/product-category/lamymejker-ru/instrumenty-ru-ru/applikatory/",
         "cherries": [
             {
-                "x": 100,
-                "y": 200
-            },
-            {
-                "x": 300,
-                "y": 150
-            }
-        ]
-    },
-    {
-        "page": "/widget.html/",
-        "cherries": [
-            {
-                "x": 50,
-                "y": 100
+                "block": ".catalog__content .catalog__text",
+                "x": "50%",
+                "y": -20
             }
         ]
     }

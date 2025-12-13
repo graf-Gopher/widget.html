@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentPage = window.location.pathname;
 
         const pageConfig = config.find((p) => p.page === currentPage);
-        const totalCherries = pageConfig.cherries?.length;
+
+        const totalCherries = config.reduce((acc, p) => acc + p.cherries.length, 0);
 
         const panel = document.createElement("div");
         panel.classList.add("cherry_block");
@@ -22,22 +23,35 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(panel);
 
         if (pageConfig) {
-            pageConfig.cherries.forEach((pos) => {
+            pageConfig.cherries.forEach((cherryConfig) => {
+                let container = cherryConfig.block ? document.querySelector(cherryConfig.block) : null;
+
                 const cherry = document.createElement("div");
                 cherry.classList.add("cherry");
                 cherry.textContent = "🍒";
                 cherry.style.position = "absolute";
-                cherry.style.left = pos.x + "px";
-                cherry.style.top = pos.y + "px";
                 cherry.style.cursor = "pointer";
                 cherry.style.fontSize = "40px";
-                cherry.style.zIndex = "9999";
+                cherry.style.zIndex = "999";
+
                 cherry.addEventListener("click", () => {
                     cherriesFound++;
                     document.getElementById("cherry-counter").textContent = cherriesFound + "/" + totalCherries;
                     cherry.remove();
                 });
-                document.body.appendChild(cherry);
+
+                if (container) {
+                    if (getComputedStyle(container).position === "static") {
+                        container.style.position = "relative";
+                    }
+                    cherry.style.left = cherryConfig.x;
+                    cherry.style.top = typeof cherryConfig.y === "number" ? cherryConfig.y + "px" : cherryConfig.y;
+                    container.appendChild(cherry);
+                } else {
+                    cherry.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+                    cherry.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+                    document.body.appendChild(cherry);
+                }
             });
         }
 
