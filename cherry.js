@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         panel.innerHTML = `
     <span id="cherry-icon">🍒</span>
     <span id="cherry-counter">0/${totalCherries}</span>
-    <button id="send-btn"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#cf125e"><path d="M0 0h24v24H0z" fill="none"/><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+    <button id="send-btn"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#cf125e"><path d="M0 0h24v24H0z" fill="none"/><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
   `;
         document.body.appendChild(panel);
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cherry.style.left = pos.x + "px";
                 cherry.style.top = pos.y + "px";
                 cherry.style.cursor = "pointer";
-                cherry.style.fontSize = "32px";
+                cherry.style.fontSize = "40px";
                 cherry.style.zIndex = "9999";
                 cherry.addEventListener("click", () => {
                     cherriesFound++;
