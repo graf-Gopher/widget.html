@@ -58,9 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Результат відправлено менеджеру!");
             } catch (e) {
                 console.log(e);
-                if (e.message) {
-                    alert(e.message);
-                }
+                console.log(JSON.stringify(e, null, 2));
+                console.log(e.status);
+
+                // if (e.message) {
+                //     alert(e.message);
+                // }
             }
         });
     })();
