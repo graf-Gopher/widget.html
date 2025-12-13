@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("send-cherry").addEventListener("click", async () => {
             try {
-                await fetch("https://script.google.com/macros/s/AKfycbw8xv1rJBdNo7xUgQl2lJFq3julqF_wtkaw186dKMZw0X4iwnAe0Zjbz3hnq3daWqvA8g/exec", {
+                await fetch("https://script.google.com/macros/s/AKfycbz4IrFHq6XC_BwjBH7zcrh9LDJHTJglYcU1SmWZ16ydwGshjZfp4ArTcoWvWrTf5hGpmg/exec", {
                     method: "POST",
                     headers: { "Content-Type": "text/plain;charset=utf-8" },
                     body: JSON.stringify({
