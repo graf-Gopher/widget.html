@@ -13,7 +13,7 @@
         ]
     },
     {
-        "page": "/widget.html",
+        "page": "/widget.html/",
         "cherries": [
             {
                 "x": 50,
