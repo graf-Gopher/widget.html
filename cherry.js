@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.getElementById("send-cherry").addEventListener("click", async () => {
-            await fetch("https://script.google.com/a/macros/applic.com.ua/s/AKfycbxyy-42-klxYvaWtIgLNDhqGqueDvZgSGEJFVt0T58LvPOUgDXnUXZEB0cBt205Lng_Ww/exec", {
+            await fetch("https://script.google.com/macros/s/AKfycbw8xv1rJBdNo7xUgQl2lJFq3julqF_wtkaw186dKMZw0X4iwnAe0Zjbz3hnq3daWqvA8g/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
