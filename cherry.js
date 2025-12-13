@@ -3,12 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const userId = window.GLOBAL?.USER_ID;
         if (!userId) return;
 
-        let cherriesFound = 0;
+        let cherriesFound = parseInt(
+            document.cookie
+                .split(";")
+                .find((c) => c.trim().startsWith("cherry_counter="))
+                ?.split("=")[1] || 0
+        );
 
         const config = await fetch("https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/cherries.json").then((r) => r.json());
         const currentPage = window.location.pathname;
 
-        const pageConfig = config.find((p) => p.page === currentPage);
+        const pageConfig = config.find((p) => currentPage.includes(p.page));
 
         const totalCherries = config.reduce((acc, p) => acc + p.cherries.length, 0);
 
@@ -24,6 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (pageConfig) {
             pageConfig.cherries.forEach((cherryConfig) => {
+                if (pageConfig.page.includes("checkout")) {
+                    const date = new Date();
+                    if (cherryConfig.x === 15 && date.getDate() !== 15) {
+                        return;
+                    } else if (cherryConfig.x === 24 && date.getDate() !== 24) {
+                        return;
+                    }
+                }
                 let container = cherryConfig.block ? document.querySelector(cherryConfig.block) : null;
 
                 const cherry = document.createElement("div");
@@ -37,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 cherry.addEventListener("click", () => {
                     cherriesFound++;
                     document.getElementById("cherry-counter").textContent = cherriesFound + "/" + totalCherries;
+                    const expirationDate = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30);
+                    document.cookie = `cherry_counter=${cherriesFound}; expires=${expirationDate.toUTCString()}; path=/`;
                     cherry.remove();
                 });
 
@@ -44,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (getComputedStyle(container).position === "static") {
                         container.style.position = "relative";
                     }
-                    cherry.style.left = cherryConfig.x;
+                    cherry.style.left = typeof cherryConfig.x === "number" ? cherryConfig.x + "px" : cherryConfig.x;
                     cherry.style.top = typeof cherryConfig.y === "number" ? cherryConfig.y + "px" : cherryConfig.y;
                     container.appendChild(cherry);
                 } else {

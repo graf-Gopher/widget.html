@@ -5,7 +5,582 @@
             {
                 "block": ".catalog__content .catalog__text",
                 "x": "50%",
-                "y": -20
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/blog/",
+        "cherries": [
+            {
+                "block": ".page-content .entries-i:nth-child(5)",
+                "x": -10,
+                "y": "70%"
+            }
+        ]
+    },
+    {
+        "page": "/marylash-boks-podstavka-skoshennyj-s-5-planshetami/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "120%",
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/brendy/",
+        "cherries": [
+            {
+                "block": ".pager__item j-catalog-pagination-btn",
+                "x": 0,
+                "y": "120%"
+            }
+        ]
+    },
+    {
+        "page": "/product-category/brovyst-ru/",
+        "cherries": [
+            {
+                "block": ".catalog__text .text h2:nth-child(2)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/brovyst-ru/kraski/",
+        "cherries": [
+            {
+                "block": ".children-pages-menu__content",
+                "x": "10%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/vaksinh/",
+        "cherries": [
+            {
+                "block": ".children-pages-menu__content",
+                "x": "10%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/rashodnye-materialy/",
+        "cherries": [
+            {
+                "block": ".catalog-grid__item:nth-child(4) .catalogCard-title",
+                "x": -50,
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/nabor-raskhodnykh-materyalov-blue/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": 50
+            }
+        ]
+    },
+    {
+        "page": "/store-reviews/",
+        "cherries": [
+            {
+                "block": ".p-review__body:nth-child(5)",
+                "x": "90%",
+                "y": 50
+            }
+        ]
+    },
+    {
+        "page": "/vii-black-volume-lashes-007-b-mix-4-7/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "120%",
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/resnytsy-blond-honey-brown-volume-lashes-007-b-mix-4-7/",
+        "cherries": [
+            {
+                "block": ".modification__title",
+                "x": "120%",
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/sale/",
+        "cherries": [
+            {
+                "block": ".pagination-container",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/leshmejker-ru/preparaty-dlya-narashhivaniya-i-snyatiya/remuvery-ru-ru-preparaty-dlya-narashhivaniya-i-snyatiya/",
+        "cherries": [
+            {
+                "block": ".catalog-grid__item:nth-child(6) .catalogCard-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product/elektronnyj-termometr-gigrometr-dlya-narashhivaniya-resnicz-htc-1/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "90%",
+                "y": 50
+            }
+        ]
+    },
+    {
+        "page": "/",
+        "cherries": [
+            {
+                "block": ".frontInfo-text text h2:nth-child(6)",
+                "x": "100%",
+                "y": 0
+            },
+            {
+                "block": ".banners__slider-i:nth-child(-1)",
+                "x": "50%",
+                "y": -50
+            },
+            {
+                "block": ".footer__social",
+                "x": "50%",
+                "y": -50
+            },
+            {
+                "block": ".social-icons__item",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/yzohnutyi-pyntset-mary-lash-s4-mini-l-dlia-narashchyvanyia-resnyts-c-diamond-napylenyem/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "120%",
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/mary-lash-zakrepytel-dlia-resnyts-chernyi-10ml/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "90%",
+                "y": 50
+            }
+        ]
+    },
+    {
+        "page": "/checkout/",
+        "cherries": [
+            {
+                "block": null,
+                "x": 15,
+                "y": 0
+            },
+            {
+                "block": null,
+                "x": 24,
+                "y": 0
+            }
+        ]
+    },
+    {
+        "page": "/product-category/brovyst-ru/preparaty-ru/botoks-ru/",
+        "cherries": [
+            {
+                "block": ".catalog__top-col catalog__top-col--left",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/kontakty/",
+        "cherries": [
+            {
+                "block": ".location:nth-child(1)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/kosmetyka-ru/dekorativnaya-kosmetika/",
+        "cherries": [
+            {
+                "block": ".catalog__top-col catalog__top-col--left",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/onlain-kurs-korrektsyia-asymmetryy-hlaz-pry-narashchyvanyy-resnyts/",
+        "cherries": [
+            {
+                "block": ".product-description h2:nth-child(3)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/lamynyrovanye-resnyts-s-nulia/",
+        "cherries": [
+            {
+                "block": ".favorites-button__text",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/trendovye-effekty/",
+        "cherries": [
+            {
+                "block": ".product-description .text p strong:nth-child(4)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/onlain-kurs-fokus-na-resnytsakh-base/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/kursy-brovysta/",
+        "cherries": [
+            {
+                "block": ".seo-text .text h3:nth-child(3)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/lamymejker-ru/",
+        "cherries": [
+            {
+                "block": ".catalog-grid__item:nth-child(5) .catalogCard-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/m-pro-size-uchebno-metodycheskoe-posobye-po-narashchyvanyiu-resnyts/",
+        "cherries": [
+            {
+                "block": ".product__section .text h3:nth-child(2)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/klei-dlia-narashchyvanyia-resnyts-prozrachnyi-m-clear-3-ml/",
+        "cherries": [
+            {
+                "block": ".product-heading__title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/klei-dlia-narashchyvanyia-resnyts-m1-5ml/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/klei-dlia-narashchyvanyia-resnyts-m3-10ml/",
+        "cherries": [
+            {
+                "block": ".table",
+                "x": "50%",
+                "y": 50
+            }
+        ]
+    },
+    {
+        "page": "/max-size-uchebno-metodycheskoe-posobye-po-narashchyvanyiu-resnyts/",
+        "cherries": [
+            {
+                "block": ".product__column-item .product-heading__title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product/mary-lash-nabor-prepodavatelya-doski-realistichnye/",
+        "cherries": [
+            {
+                "block": ".product-header",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/kiko-milano-nabor-po-ukhodu-za-hubamy-holiday-wonderlights-santas-secret-lip-care-gift-set/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product/uchebnyj-trenirovochnyj-maneken-dlya-narashhivaniya-resnicz/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product/mary-lash-nozhniczy-dlya-brovej-i-resnicz/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/opt/",
+        "cherries": [
+            {
+                "block": ".mlp-grid-2 .mlp-card",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/patchy-chernye-kollahenovye-dlia-led-narashchyvanyia-1sht./",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/podstavka-dlia-7-ty-pyntsetov-s-mahnytamy/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/povyshenye-kvalyfykatsyy-leshmeikera/",
+        "cherries": [
+            {
+                "block": ".catalog__top-col catalog__top-col--left",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product/mary-lash-penka-dlya-resnicz-i-brovej-sherry-150ml/",
+        "cherries": [
+            {
+                "block": ".gallery__photos-container",
+                "x": "50%",
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/product/marylash-pinczet-skoshennyj-dlya-brovej-silver/",
+        "cherries": [
+            {
+                "block": ".product-price__item",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/mary-lash-sezonenko-pyntset-dlia-vydelenyia-resnyts-k1-s-nasechkamy-pod-uhlom/",
+        "cherries": [
+            {
+                "block": ".product-description j-product-description product-description--collapsible",
+                "x": "50%",
+                "y": 100
+            }
+        ]
+    },
+    {
+        "page": "/profile/ordersList/",
+        "cherries": [
+            {
+                "block": null,
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/profile/favorites/",
+        "cherries": [
+            {
+                "block": null,
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/mary-academy/1320/",
+        "cherries": [
+            {
+                "block": ".hero .hero-text",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/prohrama-loialnosti-mary-lash-pro/",
+        "cherries": [
+            {
+                "block": ".how-it-works",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/rashodnye-materialy/prostyni/",
+        "cherries": [
+            {
+                "block": ".catalog__top-row",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/sertyfykaty/",
+        "cherries": [
+            {
+                "block": ".catalog-grid__item:nth-child(2)",
+                "x": "50%",
+                "y": "50%"
+            }
+        ]
+    },
+    {
+        "page": "/sylykonovyi-braslet-s-derzhatelem-pyntseta-chernyi/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product-category/rashodnye-materialy/skotch-ru/",
+        "cherries": [
+            {
+                "block": ".catalog-grid__item:nth-child(6)",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/faq/",
+        "cherries": [
+            {
+                "block": ".faq-item:nth-child(1) .faq-answer",
+                "x": "50%",
+                "y": -50
+            },
+            {
+                "block": ".faq-item:nth-child(4)",
+                "x": "50%",
+                "y": 50
+            }
+        ]
+    },
+    {
+        "page": "/product/kodi-klej-dlya-laminirovaniya-5g/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/product/zola-kraska-dlya-brovej-s-kollagenom-eyebrow-tint-04-dark-brown-15ml/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
+            }
+        ]
+    },
+    {
+        "page": "/color-lab-nabor-dlia-lamynyrovanyia-browlash-lamination-classic-system/",
+        "cherries": [
+            {
+                "block": ".product-title",
+                "x": "50%",
+                "y": -50
             }
         ]
     }
