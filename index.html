@@ -16,13 +16,11 @@
 
 
         <!-- Base Snowfall -->
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.jquery.min.js"></script> -->
+        <script type="text/javascript" src="./snowfall.native.js"></script>
         <script>
-            var jq = jQuery.noConflict();
-        </script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.jquery.min.js"></script>
-        <script>
-            jq(document).ready(function () {
-                jq(document).snowfall({
+            document.addEventListener("DOMContentLoaded", function () {
+                snowfall(document.body, {
                     flakeCount: 65,
                     shadow: true,
                     minSize: 2,
