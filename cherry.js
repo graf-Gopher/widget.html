@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ?.split("=")[1] || 0
         );
 
-        const config = await fetch("https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/cherries.json").then((r) => r.json());
+        const config = await fetch("https://raw.githubusercontent.com/graf-Gopher/widget.html/refs/heads/master/cherries.json").then((r) => r.json());
         const currentPage = window.location.pathname;
 
         const pageConfig = config.find((p) => currentPage.includes(p.page));
