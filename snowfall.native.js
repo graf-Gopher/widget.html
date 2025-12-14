@@ -1,5 +1,23 @@
 (function () {
-    function snowfall(e, options) {
+    function snowfall(options) {
+        // створюємо контейнер для снігу
+        let container = document.getElementById("snowfall-container");
+        if (!container) {
+            container = document.createElement("div");
+            container.id = "snowfall-container";
+            Object.assign(container.style, {
+                position: "fixed",
+                top: "0",
+                left: "0",
+                width: "100vw",
+                height: "100vh",
+                pointerEvents: "none", // щоб не блокував кліки
+                overflow: "hidden",
+                zIndex: 999999,
+            });
+            document.body.appendChild(container);
+        }
+
         function Snowflake(x, y, size, speed, id) {
             this.id = id;
             this.x = x;
@@ -22,21 +40,14 @@
             Object.assign(r.style, {
                 width: this.size + "px",
                 height: this.size + "px",
-                position: opts.flakePosition,
+                position: "absolute",
                 top: this.y + "px",
                 left: this.x + "px",
                 fontSize: 0,
-                zIndex: opts.flakeIndex,
             });
 
-            if (e.tagName === document.tagName) {
-                document.body.appendChild(r);
-                e = document.body;
-            } else {
-                e.appendChild(r);
-            }
-
-            this.element = document.getElementById("flake-" + this.id);
+            container.appendChild(r);
+            this.element = r;
 
             this.update = () => {
                 this.y += this.speed;
@@ -55,6 +66,8 @@
                 this.stepSize = rand(1, 10) / 100;
                 this.size = rand(100 * opts.minSize, 100 * opts.maxSize) / 100;
                 this.speed = rand(opts.minSpeed, opts.maxSpeed);
+                this.element.style.width = this.size + "px";
+                this.element.style.height = this.size + "px";
             };
         }
 
@@ -66,16 +79,13 @@
         const defaults = {
             flakeCount: 35,
             flakeColor: "#ffffff",
-            flakePosition: "absolute",
-            flakeIndex: 999999,
             minSize: 1,
             maxSize: 2,
             minSpeed: 1,
             maxSpeed: 5,
             round: false,
             shadow: false,
-            collection: false,
-            collectionHeight: 40,
+            image: null,
             deviceorientation: false,
         };
         const opts = Object.assign({}, defaults, options);
@@ -85,16 +95,14 @@
         }
 
         let flakes = [],
-            d = e === document.body || e === document.documentElement ? Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) : e.scrollHeight,
-            p = e.clientWidth,
+            d = container.clientHeight,
+            p = container.clientWidth,
             f = 0,
             c = 0;
 
-        if (e.tagName === document.tagName) f = 25;
-
         window.addEventListener("resize", () => {
-            d = e === document.body || e === document.documentElement ? Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) : e.scrollHeight;
-            p = e.clientWidth;
+            d = container.clientHeight;
+            p = container.clientWidth;
         });
 
         for (let r = 0; r < opts.flakeCount; r++) {
@@ -122,8 +130,7 @@
         animate();
 
         this.clear = () => {
-            e.querySelectorAll(".snowfall-flakes").forEach((el) => el.remove());
-            document.querySelectorAll(".snowfall-canvas").forEach((el) => el.remove());
+            container.querySelectorAll(".snowfall-flakes").forEach((el) => el.remove());
             flakes = [];
             cancelAnimationFrame(c);
         };
