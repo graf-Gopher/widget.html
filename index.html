@@ -11,12 +11,18 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/cherry.css"></script>
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
 
         <!-- Base Snowfall -->
+        <script>
+            var jq = jQuery.noConflict();
+        </script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.jquery.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $(document).snowfall({
+            jq(document).ready(function () {
+                jq(document).snowfall({
                     flakeCount: 65,
                     shadow: true,
                     minSize: 2,
