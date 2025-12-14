@@ -1,5 +1,10 @@
+function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     (async function () {
+        await delay(3000);
         const userId = window.GLOBAL?.USER_ID;
         if (!userId) return;
 
