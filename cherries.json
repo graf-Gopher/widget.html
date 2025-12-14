@@ -13,7 +13,7 @@
         "page": "/blog/",
         "cherries": [
             {
-                "block": ".page-content .entries-i:nth-child(5)",
+                "block": ".page-content .entries-i:nth-of-type(5)",
                 "x": -10,
                 "y": "70%"
             }
@@ -33,8 +33,8 @@
         "page": "/brendy/",
         "cherries": [
             {
-                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle div.catalog__middle-col.catalog__middle-col--content div.catalog__content div.pagination-container .pager div.pager__container a.pager__item:nth-child(3)",
-                "x": 0,
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle div.catalog__middle-col.catalog__middle-col--content div.catalog__content div.pagination-container",
+                "x": "50%",
                 "y": "100%"
             }
         ]
@@ -43,7 +43,7 @@
         "page": "/product-category/brovyst-ru/",
         "cherries": [
             {
-                "block": ".container .catalog .catalog__text .seo-text .text h2:nth-child(2)",
+                "block": ".container .catalog .catalog__text .seo-text .text h2:nth-of-type(2)",
                 "x": "50%",
                 "y": -50
             }
@@ -73,7 +73,7 @@
         "page": "/product-category/rashodnye-materialy/",
         "cherries": [
             {
-                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content .catalogGrid.catalog-grid.catalog-grid--m.catalog-grid--sidebar li.catalog-grid__item:nth-child(10)",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content .catalogGrid.catalog-grid.catalog-grid--m.catalog-grid--sidebar li.catalog-grid__item:nth-of-type(10)",
                 "x": -50,
                 "y": "50%"
             }
@@ -93,7 +93,7 @@
         "page": "/store-reviews/",
         "cherries": [
             {
-                "block": ".p-review__body:nth-child(5)",
+                "block": ".p-review__body:nth-of-type(5)",
                 "x": "90%",
                 "y": 50
             }
@@ -113,7 +113,7 @@
         "page": "/resnytsy-blond-honey-brown-volume-lashes-007-b-mix-4-7/",
         "cherries": [
             {
-                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.j-product-block__tab div.product__section .product-description > div:nth-child(1) > h2:nth-child(8)",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.j-product-block__tab div.product__section .product-description > div:nth-of-type(1) > h2:nth-of-type(8)",
                 "x": "120%",
                 "y": "50%"
             }
@@ -133,7 +133,7 @@
         "page": "/product-category/leshmejker-ru/preparaty-dlya-narashhivaniya-i-snyatiya/remuvery-ru-ru-preparaty-dlya-narashhivaniya-i-snyatiya/",
         "cherries": [
             {
-                "block": "hdiv.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content .catalogGrid.catalog-grid.catalog-grid--m.catalog-grid--sidebar li.catalog-grid__item:nth-child(6)",
+                "block": "hdiv.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content .catalogGrid.catalog-grid.catalog-grid--m.catalog-grid--sidebar li.catalog-grid__item:nth-of-type(6)",
                 "x": "50%",
                 "y": -50
             }
@@ -153,12 +153,12 @@
         "page": "/",
         "cherries": [
             {
-                "block": "div.container main#main.main section.frontInfo div.frontInfo-section.__1 div.layout-wrap div.frontInfo-container.__1.__single section.frontInfo-about article.frontInfo-content .frontInfo-text > div:nth-child(1) > h2:nth-child(16)",
+                "block": "div.container main#main.main section.frontInfo div.frontInfo-section.__1 div.layout-wrap div.frontInfo-container.__1.__single section.frontInfo-about article.frontInfo-content .frontInfo-text > div:nth-of-type(1) > h2:nth-of-type(16)",
                 "x": "100%",
                 "y": 0
             },
             {
-                "block": "div.container main#main.main div.banners-group section.banners.banners--wideblock.banners--gaps-m div.banners__container div.banners__slider.swiper-container-fade.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events div.banners__slider-wrapper div.banners__slider-i:nth-child(10) > div:nth-child(1) > div:nth-child(1) > a:nth-child(2)",
+                "block": "div.container main#main.main div.banners-group section.banners.banners--wideblock.banners--gaps-m div.banners__container div.banners__slider.swiper-container-fade.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events div.banners__slider-wrapper div.banners__slider-i:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
                 "x": "50%",
                 "y": -50
             },
@@ -223,7 +223,7 @@
         "page": "/kontakty/",
         "cherries": [
             {
-                "block": "div.container main#main.main div.wrapper div.layout div.layout-main div.layout-main-inner section.page div.contacts-content div.contacts-main div.text div.contacts-info .contacts-address > address:nth-child(2) > span:nth-child(1) > div:nth-child(1) > div:nth-child(3)",
+                "block": "div.container main#main.main div.wrapper div.layout div.layout-main div.layout-main-inner section.page div.contacts-content div.contacts-main div.text div.contacts-info .contacts-address > address:nth-of-type(2) > span:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
                 "x": "50%",
                 "y": -50
             }
@@ -243,7 +243,7 @@
         "page": "/onlain-kurs-korrektsyia-asymmetryy-hlaz-pry-narashchyvanyy-resnyts/",
         "cherries": [
             {
-                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.product__group-item div div.product__section .product-description > div:nth-child(1) > h2:nth-child(11)",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.product__group-item div div.product__section .product-description > div:nth-of-type(1) > h2:nth-of-type(11)",
                 "x": "50%",
                 "y": -50
             }
@@ -283,7 +283,7 @@
         "page": "/kursy-brovysta/",
         "cherries": [
             {
-                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div#j-catalog-seo.layout-main-seo section.catalog__text .seo-text > div:nth-child(1) > h3:nth-child(7)",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div#j-catalog-seo.layout-main-seo section.catalog__text .seo-text > div:nth-of-type(1) > h3:nth-of-type(7)",
                 "x": "50%",
                 "y": -50
             }
@@ -293,7 +293,7 @@
         "page": "/product-category/lamymejker-ru/",
         "cherries": [
             {
-                "block": ".catalog-grid__item:nth-child(5) .catalogCard-title",
+                "block": ".catalog-grid__item:nth-of-type(5) .catalogCard-title",
                 "x": "50%",
                 "y": -50
             }
@@ -303,7 +303,7 @@
         "page": "/m-pro-size-uchebno-metodycheskoe-posobye-po-narashchyvanyiu-resnyts/",
         "cherries": [
             {
-                "block": ".product__section .text h3:nth-child(2)",
+                "block": ".product__section .text h3:nth-of-type(2)",
                 "x": "50%",
                 "y": -50
             }
@@ -513,7 +513,7 @@
         "page": "/sertyfykaty/",
         "cherries": [
             {
-                "block": ".catalog-grid__item:nth-child(2)",
+                "block": ".catalog-grid__item:nth-of-type(2)",
                 "x": "50%",
                 "y": "50%"
             }
@@ -533,7 +533,7 @@
         "page": "/product-category/rashodnye-materialy/skotch-ru/",
         "cherries": [
             {
-                "block": ".catalog-grid__item:nth-child(6)",
+                "block": ".catalog-grid__item:nth-of-type(6)",
                 "x": "50%",
                 "y": -50
             }
@@ -543,12 +543,12 @@
         "page": "/faq/",
         "cherries": [
             {
-                "block": ".faq-item:nth-child(1) .faq-answer",
+                "block": ".faq-item:nth-of-type(1) .faq-answer",
                 "x": "50%",
                 "y": -50
             },
             {
-                "block": ".faq-item:nth-child(4)",
+                "block": ".faq-item:nth-of-type(4)",
                 "x": "50%",
                 "y": 50
             }
