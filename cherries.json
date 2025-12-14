@@ -25,7 +25,7 @@
             {
                 "block": ".product-price__item",
                 "x": "120%",
-                "y": "50%"
+                "y": -10
             }
         ]
     },
@@ -33,9 +33,9 @@
         "page": "/brendy/",
         "cherries": [
             {
-                "block": ".pager__item j-catalog-pagination-btn",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle div.catalog__middle-col.catalog__middle-col--content div.catalog__content div.pagination-container .pager div.pager__container a.pager__item:nth-child(3)",
                 "x": 0,
-                "y": "120%"
+                "y": "100%"
             }
         ]
     },
@@ -43,7 +43,7 @@
         "page": "/product-category/brovyst-ru/",
         "cherries": [
             {
-                "block": ".catalog__text .text h2:nth-child(2)",
+                "block": ".container .catalog .catalog__text .seo-text .text h2:nth-child(2)",
                 "x": "50%",
                 "y": -50
             }
@@ -53,7 +53,7 @@
         "page": "/product-category/brovyst-ru/kraski/",
         "cherries": [
             {
-                "block": ".children-pages-menu__content",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div.children-pages-menu nav.children-pages-menu__content",
                 "x": "10%",
                 "y": -50
             }
@@ -63,7 +63,7 @@
         "page": "/vaksinh/",
         "cherries": [
             {
-                "block": ".children-pages-menu__content",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div.children-pages-menu nav.children-pages-menu__content",
                 "x": "10%",
                 "y": -50
             }
@@ -73,7 +73,7 @@
         "page": "/product-category/rashodnye-materialy/",
         "cherries": [
             {
-                "block": ".catalog-grid__item:nth-child(4) .catalogCard-title",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content .catalogGrid.catalog-grid.catalog-grid--m.catalog-grid--sidebar li.catalog-grid__item:nth-child(10)",
                 "x": -50,
                 "y": "50%"
             }
@@ -105,7 +105,7 @@
             {
                 "block": ".product-price__item",
                 "x": "120%",
-                "y": "50%"
+                "y": -10
             }
         ]
     },
@@ -113,7 +113,7 @@
         "page": "/resnytsy-blond-honey-brown-volume-lashes-007-b-mix-4-7/",
         "cherries": [
             {
-                "block": ".modification__title",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.j-product-block__tab div.product__section .product-description > div:nth-child(1) > h2:nth-child(8)",
                 "x": "120%",
                 "y": "50%"
             }
@@ -133,7 +133,7 @@
         "page": "/product-category/leshmejker-ru/preparaty-dlya-narashhivaniya-i-snyatiya/remuvery-ru-ru-preparaty-dlya-narashhivaniya-i-snyatiya/",
         "cherries": [
             {
-                "block": ".catalog-grid__item:nth-child(6) .catalogCard-title",
+                "block": "hdiv.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content .catalogGrid.catalog-grid.catalog-grid--m.catalog-grid--sidebar li.catalog-grid__item:nth-child(6)",
                 "x": "50%",
                 "y": -50
             }
@@ -153,12 +153,12 @@
         "page": "/",
         "cherries": [
             {
-                "block": ".frontInfo-text text h2:nth-child(6)",
+                "block": "div.container main#main.main section.frontInfo div.frontInfo-section.__1 div.layout-wrap div.frontInfo-container.__1.__single section.frontInfo-about article.frontInfo-content .frontInfo-text > div:nth-child(1) > h2:nth-child(16)",
                 "x": "100%",
                 "y": 0
             },
             {
-                "block": ".banners__slider-i:nth-child(-1)",
+                "block": "div.container main#main.main div.banners-group section.banners.banners--wideblock.banners--gaps-m div.banners__container div.banners__slider.swiper-container-fade.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events div.banners__slider-wrapper div.banners__slider-i:nth-child(10) > div:nth-child(1) > div:nth-child(1) > a:nth-child(2)",
                 "x": "50%",
                 "y": -50
             },
@@ -180,7 +180,7 @@
             {
                 "block": ".product-price__item",
                 "x": "120%",
-                "y": "50%"
+                "y": -10
             }
         ]
     },
@@ -188,7 +188,7 @@
         "page": "/mary-lash-zakrepytel-dlia-resnyts-chernyi-10ml/",
         "cherries": [
             {
-                "block": ".product-title",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--right div.product__column-container.j-product-right-column div.product__column-item div.product__group div.product__group-item.j-product-block.j-product-block__list-item div div.product__section.product__section--header div.product-header div.product-header__row.product-header__row--top div.product-header__block.product-header__block--wide h1.product-title",
                 "x": "90%",
                 "y": 50
             }
@@ -213,7 +213,7 @@
         "page": "/product-category/brovyst-ru/preparaty-ru/botoks-ru/",
         "cherries": [
             {
-                "block": ".catalog__top-col catalog__top-col--left",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__top-row div.catalog__top-col.catalog__top-col--left h1#j-catalog-header.main-h",
                 "x": "50%",
                 "y": -50
             }
@@ -223,7 +223,7 @@
         "page": "/kontakty/",
         "cherries": [
             {
-                "block": ".location:nth-child(1)",
+                "block": "div.container main#main.main div.wrapper div.layout div.layout-main div.layout-main-inner section.page div.contacts-content div.contacts-main div.text div.contacts-info .contacts-address > address:nth-child(2) > span:nth-child(1) > div:nth-child(1) > div:nth-child(3)",
                 "x": "50%",
                 "y": -50
             }
@@ -233,7 +233,7 @@
         "page": "/product-category/kosmetyka-ru/dekorativnaya-kosmetika/",
         "cherries": [
             {
-                "block": ".catalog__top-col catalog__top-col--left",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__top-row div.catalog__top-col.catalog__top-col--left h1#j-catalog-header.main-h",
                 "x": "50%",
                 "y": -50
             }
@@ -243,7 +243,7 @@
         "page": "/onlain-kurs-korrektsyia-asymmetryy-hlaz-pry-narashchyvanyy-resnyts/",
         "cherries": [
             {
-                "block": ".product-description h2:nth-child(3)",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.product__group-item div div.product__section .product-description > div:nth-child(1) > h2:nth-child(11)",
                 "x": "50%",
                 "y": -50
             }
@@ -253,7 +253,7 @@
         "page": "/lamynyrovanye-resnyts-s-nulia/",
         "cherries": [
             {
-                "block": ".favorites-button__text",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--right div.product__column-container.j-product-right-column div.product__column-item div.product__group div.product__group-item.j-product-block.j-product-block__list-item div div.product__section.product__section--price div.product__row div.product__block div.product-toolbar div.product-toolbar__item button#uid7c14369e0d005de29fc7b07e406b5a6a-2213.favorites-button.j-widget-favorites-add div.favorites-button__text",
                 "x": "50%",
                 "y": -50
             }
@@ -263,7 +263,7 @@
         "page": "/trendovye-effekty/",
         "cherries": [
             {
-                "block": ".product-description .text p strong:nth-child(4)",
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.product__group-item div div.product__section div.product-description.j-product-description.product-description--collapsible div.text h3",
                 "x": "50%",
                 "y": -50
             }
@@ -273,9 +273,9 @@
         "page": "/onlain-kurs-fokus-na-resnytsakh-base/",
         "cherries": [
             {
-                "block": ".product-price__item",
-                "x": "50%",
-                "y": -50
+                "block": "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--right div.product__column-container.j-product-right-column div.product__column-item div.product__group div.product__group-item.j-product-block.j-product-block__list-item div div.product__section.product__section--price div.product__row div.product__block.product__block--wide div.product-price div.product-price__box div.product-price__item",
+                "x": "120%",
+                "y": -10
             }
         ]
     },
@@ -283,7 +283,7 @@
         "page": "/kursy-brovysta/",
         "cherries": [
             {
-                "block": ".seo-text .text h3:nth-child(3)",
+                "block": "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div#j-catalog-seo.layout-main-seo section.catalog__text .seo-text > div:nth-child(1) > h3:nth-child(7)",
                 "x": "50%",
                 "y": -50
             }

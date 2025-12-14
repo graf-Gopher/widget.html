@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
                 let container = cherryConfig.block ? document.querySelector(cherryConfig.block) : null;
+                console.log(container);
 
                 const cherry = document.createElement("div");
                 cherry.classList.add("cherry");
