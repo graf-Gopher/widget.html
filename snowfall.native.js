@@ -85,7 +85,7 @@
         }
 
         let flakes = [],
-            d = e.clientHeight,
+            d = e === document.body || e === document.documentElement ? Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) : e.scrollHeight,
             p = e.clientWidth,
             f = 0,
             c = 0;
@@ -93,7 +93,7 @@
         if (e.tagName === document.tagName) f = 25;
 
         window.addEventListener("resize", () => {
-            d = e.clientHeight;
+            d = e === document.body || e === document.documentElement ? Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) : e.scrollHeight;
             p = e.clientWidth;
         });
 
