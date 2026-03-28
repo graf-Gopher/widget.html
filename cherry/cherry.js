@@ -6,6 +6,19 @@ const CHERRY_API_BASE = window.CHERRY_API_BASE || "https://mlnd.order.home.under
 const CHERRY_CLICK_ENDPOINT = `${CHERRY_API_BASE}/click-item`;
 const CHERRY_USER_ENDPOINT = `${CHERRY_API_BASE}/user-clicks`;
 const CHERRY_MAIL_ENDPOINT = window.CHERRY_MAIL_ENDPOINT || `${CHERRY_API_BASE}/send-email`;
+const CHERRY_CAMPAIGN_START = new Date(2026, 3, 1, 0, 0, 0, 0);
+const CHERRY_CAMPAIGN_END = new Date(2026, 3, 10, 0, 0, 0, 0);
+const CHERRY_DAILY_LIMITS = {
+    "2026-04-01": 15,
+    "2026-04-02": 20,
+    "2026-04-03": 30,
+    "2026-04-04": 35,
+    "2026-04-05": 42,
+    "2026-04-06": 47,
+    "2026-04-07": 62,
+    "2026-04-08": 67,
+    "2026-04-09": 70,
+};
 
 function injectCherryAlertStyles() {
     if (document.getElementById("cherry-alert-styles")) return;
@@ -41,6 +54,15 @@ function injectCherryAlertStyles() {
             font-size: 24px;
             font-weight: bold;
             font-family: sans-serif;
+        }
+
+        .cherry_block #cherry-timer {
+            display: block;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #cf125e;
+            font-family: sans-serif;
+            white-space: nowrap;
         }
 
         .cherry_block #send-btn {
@@ -217,13 +239,14 @@ function showCustomAlert(message) {
 document.addEventListener("DOMContentLoaded", function () {
     (async function () {
         let sendblock = false;
+        let countdownInterval = null;
+        const renderedCherries = [];
 
         injectCherryAlertStyles();
         injectCherryAlertMarkup();
 
-        await delay(1000);
-        // const userId = window.CHERRY_USER_ID || window.GLOBAL?.USER_ID || "";
-        const userId = "test";
+        const userId = window.GLOBAL?.USER_ID;
+        // const userId = "test";
 
         if (!userId) {
             console.error("Cherry widget requires userId");
@@ -232,6 +255,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let cherriesFounds = [];
         let cherriesFound = 0;
+        let currentLimit = 0;
+
+        function formatCampaignDateKey(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
+        }
+
+        function getCampaignLimit(date) {
+            return CHERRY_DAILY_LIMITS[formatCampaignDateKey(date)] || 0;
+        }
+
+        function isCampaignActive(date) {
+            return date >= CHERRY_CAMPAIGN_START && date < CHERRY_CAMPAIGN_END;
+        }
+
+        function formatTimeLeft(ms) {
+            const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            return `${String(days).padStart(2, "0")}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
+        }
+
+        function removeRenderedCherries() {
+            renderedCherries.forEach((cherry) => cherry.remove());
+            renderedCherries.length = 0;
+        }
+
+        function updateCounter() {
+            const counter = document.getElementById("cherry-counter");
+            if (counter) {
+                counter.textContent = `${cherriesFound}/${currentLimit}`;
+            }
+        }
+
+        function updateTimer() {
+            const timer = document.getElementById("cherry-timer");
+            const panel = document.getElementById("send-cherry");
+            const now = new Date();
+
+            if (!timer) {
+                return;
+            }
+
+            if (!isCampaignActive(now)) {
+                timer.textContent = "Campaign ended";
+                removeRenderedCherries();
+                if (panel) {
+                    panel.style.display = "none";
+                }
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                }
+                return;
+            }
+
+            currentLimit = getCampaignLimit(now);
+            updateCounter();
+            timer.textContent = `Time left: ${formatTimeLeft(CHERRY_CAMPAIGN_END.getTime() - now.getTime())}`;
+
+            if (cherriesFound >= currentLimit) {
+                removeRenderedCherries();
+            }
+        }
 
         function extractClickedItemIds(clickedItems) {
             if (!Array.isArray(clickedItems)) {
@@ -347,6 +438,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         }
 
+        const now = new Date();
+
+        if (!isCampaignActive(now)) {
+            return;
+        }
+
+        currentLimit = getCampaignLimit(now);
+
         // const config = await fetch("https://marylash.pro/cherries.json").then((r) => r.json());
         const config = cherries;
         const currentPage = window.location.pathname;
@@ -371,8 +470,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log(pageConfig);
 
-        const totalCherries = config.reduce((acc, p) => acc + p.cherries.length, 0);
-
         const panel = document.createElement("div");
         panel.classList.add("cherry_block");
         panel.id = "send-cherry";
@@ -380,12 +477,17 @@ document.addEventListener("DOMContentLoaded", function () {
             <span id="cherry-icon">
                 <img src="./image.png" alt="cherries" width="40px" height="40px" />
             </span>
-            <span id="cherry-counter">${cherriesFound}/50</span>
+            <span>
+                <span id="cherry-counter">${cherriesFound}/${currentLimit}</span>
+                <span id="cherry-timer"></span>
+            </span>
             <button id="send-btn"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#cf125e"><path d="M0 0h24v24H0z" fill="none"/><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
         `;
         document.body.appendChild(panel);
+        updateTimer();
+        countdownInterval = setInterval(updateTimer, 1000);
 
-        if (pageConfig) {
+        if (pageConfig && cherriesFound < currentLimit) {
             pageConfig.cherries.forEach((cherryConfig) => {
                 if (pageConfig.page.includes("checkout")) {
                     const date = new Date();
@@ -423,8 +525,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     try {
                         await saveClickedCherry(cherryConfig.id);
-                        document.getElementById("cherry-counter").textContent = `${cherriesFound}/50`;
+                        updateCounter();
                         cherry.remove();
+                        const cherryIndex = renderedCherries.indexOf(cherry);
+                        if (cherryIndex !== -1) {
+                            renderedCherries.splice(cherryIndex, 1);
+                        }
+
+                        if (cherriesFound >= currentLimit) {
+                            removeRenderedCherries();
+                        }
                     } catch (error) {
                         cherry.style.pointerEvents = "auto";
                         console.error("Cherry save failed:", error.message);
@@ -438,6 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     cherry.style.left = typeof cherryConfig.x === "number" ? cherryConfig.x + "px" : cherryConfig.x;
                     cherry.style.top = typeof cherryConfig.y === "number" ? cherryConfig.y + "px" : cherryConfig.y;
                     container.appendChild(cherry);
+                    renderedCherries.push(cherry);
                 } else {
                     const maxWidth = document.documentElement.scrollWidth;
                     const maxHeight = document.documentElement.scrollHeight;
@@ -448,6 +559,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // cherry.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
                     // cherry.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
                     document.body.appendChild(cherry);
+                    renderedCherries.push(cherry);
                 }
             });
         }
