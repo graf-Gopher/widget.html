@@ -7,15 +7,18 @@
             container.id = "snowfall-container";
             Object.assign(container.style, {
                 position: "fixed",
-                top: "0",
-                left: "0",
-                width: "100vw",
-                height: "100vh",
-                pointerEvents: "none", // щоб не блокував кліки
+                // top: "0",
+                // left: "0",
+                // width: "100dvw",
+                // height: "100dvh",
+                inset: "0",
+                pointerEvents: "none",
                 overflow: "hidden",
                 zIndex: 999999,
             });
+            // setTimeout(() => {
             document.body.appendChild(container);
+            // }, 1500);
         }
 
         function Snowflake(x, y, size, speed, id) {

@@ -1,0 +1,2 @@
+{"timestamp":"2026-03-28T13:15:01.056Z","status":"saved-click","userId":"test","itemId":1000,"page":"http://127.0.0.1:5500/cherry/"}
+{"timestamp":"2026-03-28T13:15:40.610Z","status":"success","to":"ganzimaro@gmail.com","cc":null,"subject":"Cherry result: test","text":"User ID: test\nFound cherries: 1\nFound IDs: 1000\nPage: http://127.0.0.1:5500/cherry/\nSent at: 2026-03-28T13:15:40.598Z","html":null,"messageId":"<631f62be-3d51-7557-6012-2b381f8a13bf@applic.com.ua>"}

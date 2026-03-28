@@ -1,14 +1,25 @@
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <!-- <link rel="stylesheet" href="https://box-catering-test.it-artel.ua/im_livechat/external_lib.css" />
         <script type="text/javascript" src="https://box-catering-test.it-artel.ua/im_livechat/loader/1"></script>
         <script type="text/javascript" src="https://box-catering-test.it-artel.ua/im_livechat/external_lib.js"></script> -->
 
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url(/bg.png);
+                background-size: 100%;
+            }
+        </style>
+
         <!-- src="./widget.js" -->
 
         <!-- Base -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/cherry.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/cherry.css"></script>
+        <script type="text/javascript" src="./cherry.js"></script>
         <button onclick="document.querySelector('.cherry_block').style.display = 'block'; document.querySelector('.cherry').style.display = 'block'" style="width: 12px;height: 12px; position: fixed;bottom: 0;left: 0;padding: 0;border: none;"></button>
 
         <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
@@ -17,7 +28,7 @@
         <!-- Base Snowfall -->
         <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.jquery.min.js"></script> -->
         <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.native.js"></script> -->
-        <script type="text/javascript" src="./snowfall.native.js"></script>
+        <!-- <script type="text/javascript" src="./snowfall.native.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 snowfall({
@@ -25,13 +36,17 @@
                     shadow: true,
                     minSize: 2,
                     maxSize: 5,
-                    round: true
-                    // minSpeed: 1,
-                    // maxSpeed: 4,
+                    round: true,
+                    minSpeed: 1,
+                    maxSpeed: 2,
                 });
             });
-        </script>
+        </script> -->
         <!-- ===== -->
+
+        <!-- <button id="send-btn"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#cf125e"><path d="M0 0h24v24H0z" fill="none"/><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button> -->
+
+        <!-- =============== -->
 
         <!-- Advenced Snowfall -->
         <!-- <script type="text/javascript" src="./snowfall.js"></script>
@@ -120,7 +135,7 @@
 
         <!-- <script type="text/javascript" src="https://erp.box-catering.ua/im_livechat/loader/1"></script> -->
     </head>
-    <body style="min-height: 120dvh;">
+    <body style="min-height: 120dvh">
         TEST PAGE
     </body>
 </html>

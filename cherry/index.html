@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url(./bg.png);
+                background-size: 100%;
+            }
+        </style>
+
+        <!-- Base -->
+        <script type="text/javascript" src="./cherry.js"></script>
+        <button
+            onclick="
+                document.querySelector('.cherry_block').style.display = 'block';
+                document.querySelector('.cherry').style.display = 'block';
+            "
+            style="width: 12px; height: 12px; position: fixed; bottom: 0; left: 0; padding: 0; border: none"
+        ></button>
+
+        <!-- Base Snowfall -->
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.jquery.min.js"></script> -->
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/graf-Gopher/widget.html/snowfall.native.js"></script> -->
+        <!-- <script type="text/javascript" src="./snowfall.native.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                snowfall({
+                    flakeCount: 65,
+                    shadow: true,
+                    minSize: 2,
+                    maxSize: 5,
+                    round: true,
+                    minSpeed: 1,
+                    maxSpeed: 2,
+                });
+            });
+        </script> -->
+    </head>
+    <body style="min-height: 120dvh">
+        TEST PAGE
+    </body>
+</html>

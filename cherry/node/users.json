@@ -1,0 +1,13 @@
+{
+  "test": {
+    "userId": "test",
+    "clickedItems": [
+      {
+        "itemId": 1000,
+        "page": "http://127.0.0.1:5500/cherry/",
+        "clickedAt": "2026-03-28T13:15:01.056Z"
+      }
+    ],
+    "updatedAt": "2026-03-28T13:15:01.056Z"
+  }
+}
