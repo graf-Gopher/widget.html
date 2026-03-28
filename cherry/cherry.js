@@ -526,17 +526,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var cherries = [
     {
-        page: "/cherry/",
-        cherries: [
-            {
-                id: 1000,
-                block: null,
-                x: 15,
-                y: 0,
-            },
-        ],
-    },
-    {
         page: "/product-category/lamymejker-ru/instrumenty-ru-ru/applikatory/",
         cherries: [
             {
@@ -701,36 +690,35 @@ var cherries = [
             },
         ],
     },
-    // {
-    //     page: "/",
-    //     cherries: [
-    //         {
-    //             id: 16,
-    //             block: "div.container main#main.main section.frontInfo div.frontInfo-section.__1 div.layout-wrap div.frontInfo-container.__1.__single section.frontInfo-about article.frontInfo-content .frontInfo-text h2:nth-of-type(2)",
-    //             x: "10%",
-    //             y: 0,
-    //         },
-    //         // {
-    //         //     id: 17,
-    //         //     block: "div.container main#main.main div.banners-group section.banners.banners--wideblock.banners--gaps-m div.banners__container div.banners__slider.swiper-container-fade.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events div.banners__slider-wrapper div.banners__slider-i:nth-of-type(10) div.banners__item.banners__item--radius-none.banners__item--size-l div.banner div.banner-image",
-    //         //     x: "50%",
-    //         //     y: -50,
-    //         // },
-    //         {
-    //             id: 18,
-    //             block: "div.container footer.footer div.footer__container div.footer__wrapper.wrapper div.footer__columns div.footer__col div.footer__col-wrap div.footer__block div.footer__social",
-    //             x: "50%",
-    //             y: -10,
-    //         },
-    //         {
-    //             id: 19,
-    //             // block: ".social-icons__item",
-    //             block: "div.container div.header div.header__container div.header__middle div.header__wrapper div.header__layout.header__layout--middle div.header__column.header__column--right div.header__section div.basket.j-basket-header",
-    //             x: 0,
-    //             y: 0,
-    //         },
-    //     ],
-    // },
+    {
+        page: "/",
+        cherries: [
+            {
+                id: 16,
+                block: "div.container main#main.main section.frontInfo div.frontInfo-section.__1 div.layout-wrap div.frontInfo-container.__1.__single section.frontInfo-about article.frontInfo-content .frontInfo-text h2:nth-of-type(2)",
+                x: "10%",
+                y: 0,
+            },
+            {
+                id: 17,
+                block: "div.container main#main.main div.banners-group section.banners.banners--wideblock.banners--gaps-m div.banners__container div.banners__slider.swiper-container-fade.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events div.banners__slider-wrapper div.banners__slider-i:nth-of-type(10) div.banners__item.banners__item--radius-none.banners__item--size-l div.banner div.banner-image",
+                x: "50%",
+                y: -50,
+            },
+            {
+                id: 18,
+                block: "div.container footer.footer div.footer__container div.footer__wrapper.wrapper div.footer__columns div.footer__col div.footer__col-wrap div.footer__block div.footer__social",
+                x: "50%",
+                y: -10,
+            },
+            {
+                id: 19,
+                block: "div.container div.header div.header__container div.header__middle div.header__wrapper div.header__layout.header__layout--middle div.header__column.header__column--right div.header__section div.basket.j-basket-header",
+                x: 0,
+                y: 0,
+            },
+        ],
+    },
     {
         page: "/yzohnutyi-pyntset-mary-lash-s4-mini-l-dlia-narashchyvanyia-resnyts-c-diamond-napylenyem/",
         cherries: [
@@ -979,72 +967,72 @@ var cherries = [
             },
         ],
     },
-    // {
-    //     page: "/patchy-chernye-kollahenovye-dlia-led-narashchyvanyia-1sht./",
-    //     cherries: [
-    //         {
-    //             id: 43,
-    //             block: ".product-price__item",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/podstavka-dlia-7-ty-pyntsetov-s-mahnytamy/",
-    //     cherries: [
-    //         {
-    //             id: 44,
-    //             block: ".product-title",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/povyshenye-kvalyfykatsyy-leshmeikera/",
-    //     cherries: [
-    //         {
-    //             id: 45,
-    //             block: "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div#j-catalog-seo.layout-main-seo section.catalog__text div.seo-text div.text",
-    //             x: "50%",
-    //             y: 100,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/product/mary-lash-penka-dlya-resnicz-i-brovej-sherry-150ml/",
-    //     cherries: [
-    //         {
-    //             id: 46,
-    //             block: ".gallery__photos-container",
-    //             x: "50%",
-    //             y: "50%",
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/product/marylash-pinczet-skoshennyj-dlya-brovej-silver/",
-    //     cherries: [
-    //         {
-    //             id: 47,
-    //             block: ".product-price__item",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/mary-lash-sezonenko-pyntset-dlia-vydelenyia-resnyts-k1-s-nasechkamy-pod-uhlom/",
-    //     cherries: [
-    //         {
-    //             id: 48,
-    //             block: "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.j-product-block__tab div.product__section div.product-description.j-product-description.product-description--collapsible.is-collapsed div.text",
-    //             x: "50%",
-    //             y: 100,
-    //         },
-    //     ],
-    // },
+    {
+        page: "/patchy-chernye-kollahenovye-dlia-led-narashchyvanyia-1sht./",
+        cherries: [
+            {
+                id: 43,
+                block: ".product-price__item",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/podstavka-dlia-7-ty-pyntsetov-s-mahnytamy/",
+        cherries: [
+            {
+                id: 44,
+                block: ".product-title",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/povyshenye-kvalyfykatsyy-leshmeikera/",
+        cherries: [
+            {
+                id: 45,
+                block: "div.container main#main.main div.wrapper div.catalog div.catalog__middle.j-catalog-sticker-parent div.catalog__middle-col.catalog__middle-col--content.catalog__middle-col--shifted-right div.catalog__content div#j-catalog-seo.layout-main-seo section.catalog__text div.seo-text div.text",
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/product/mary-lash-penka-dlya-resnicz-i-brovej-sherry-150ml/",
+        cherries: [
+            {
+                id: 46,
+                block: ".gallery__photos-container",
+                x: "50%",
+                y: "50%",
+            },
+        ],
+    },
+    {
+        page: "/product/marylash-pinczet-skoshennyj-dlya-brovej-silver/",
+        cherries: [
+            {
+                id: 47,
+                block: ".product-price__item",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/mary-lash-sezonenko-pyntset-dlia-vydelenyia-resnyts-k1-s-nasechkamy-pod-uhlom/",
+        cherries: [
+            {
+                id: 48,
+                block: "div.container main#main.main div.wrapper section.product div.product__grid div.product__column.product__column--left div.product__column-container.j-product-left-column div.product__column-item div.product__group.product__group--tabs div.j-product-block__tab div.product__section div.product-description.j-product-description.product-description--collapsible.is-collapsed div.text",
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
     {
         page: "/profile/ordersList/",
         cherries: [
@@ -1067,28 +1055,28 @@ var cherries = [
             },
         ],
     },
-    // {
-    //     page: "/mary-academy/1320/",
-    //     cherries: [
-    //         {
-    //             id: 51,
-    //             block: "div.container main#main.main div.wrapper div.layout div.layout-main div.layout-main-inner section.page div.page-content div.article-text .hero:nth-of-type(3)",
-    //             x: "80%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/prohrama-loialnosti-mary-lash-pro/",
-    //     cherries: [
-    //         {
-    //             id: 52,
-    //             block: ".how-it-works",
-    //             x: 20,
-    //             y: -50,
-    //         },
-    //     ],
-    // },
+    {
+        page: "/mary-academy/1320/",
+        cherries: [
+            {
+                id: 51,
+                block: "div.container main#main.main div.wrapper div.layout div.layout-main div.layout-main-inner section.page div.page-content div.article-text .hero:nth-of-type(3)",
+                x: "80%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/prohrama-loialnosti-mary-lash-pro/",
+        cherries: [
+            {
+                id: 52,
+                block: ".how-it-works",
+                x: 20,
+                y: -50,
+            },
+        ],
+    },
     {
         page: "/product-category/rashodnye-materialy/prostyni/",
         cherries: [
@@ -1111,17 +1099,17 @@ var cherries = [
             },
         ],
     },
-    // {
-    //     page: "/sylykonovyi-braslet-s-derzhatelem-pyntseta-chernyi/",
-    //     cherries: [
-    //         {
-    //             id: 55,
-    //             block: ".product-title",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
+    {
+        page: "/sylykonovyi-braslet-s-derzhatelem-pyntseta-chernyi/",
+        cherries: [
+            {
+                id: 55,
+                block: ".product-title",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
     {
         page: "/product-category/rashodnye-materialy/skotch-ru/",
         cherries: [
@@ -1150,56 +1138,312 @@ var cherries = [
             },
         ],
     },
-    // {
-    //     page: "/product/kodi-klej-dlya-laminirovaniya-5g/",
-    //     cherries: [
-    //         {
-    //             id: 59,
-    //             block: ".product-title",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/product/zola-kraska-dlya-brovej-s-kollagenom-eyebrow-tint-04-dark-brown-15ml/",
-    //     cherries: [
-    //         {
-    //             id: 60,
-    //             block: ".product-title",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
-    // {
-    //     page: "/color-lab-nabor-dlia-lamynyrovanyia-browlash-lamination-classic-system/",
-    //     cherries: [
-    //         {
-    //             id: 61,
-    //             block: ".product-title",
-    //             x: "50%",
-    //             y: -50,
-    //         },
-    //     ],
-    // },
+    {
+        page: "/product/kodi-klej-dlya-laminirovaniya-5g/",
+        cherries: [
+            {
+                id: 59,
+                block: ".product-title",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/product/zola-kraska-dlya-brovej-s-kollagenom-eyebrow-tint-04-dark-brown-15ml/",
+        cherries: [
+            {
+                id: 60,
+                block: ".product-title",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/color-lab-nabor-dlia-lamynyrovanyia-browlash-lamination-classic-system/",
+        cherries: [
+            {
+                id: 61,
+                block: ".product-title",
+                x: "50%",
+                y: -50,
+            },
+        ],
+    },
+    {
+        page: "/novynky/",
+        cherries: [
+            {
+                id: 62,
+                block: null,
+                x: "50%",
+                y: "50%",
+            },
+        ],
+    },
+    {
+        page: "/podstavka-s-naklonom-pod-planshetku-s-otverstyem-dlia-lunky-y-s-uporom-pod-ruku/",
+        cherries: [
+            {
+                id: 63,
+                block: "#main > div.wrapper > section > div.product__grid > div.product__column.product__column--left > div > div:nth-child(2) > div > div:nth-child(2) > div > div > div > p:nth-child(6)",
+                x: "120%",
+                y: -10,
+            },
+        ],
+    },
+    {
+        page: "/mary-lash-academy-ai-yntensyv-yz-biuty-retushy/",
+        cherries: [
+            {
+                id: 64,
+                block: "#main > div.wrapper > section > div.product__grid > div.product__column.product__column--left > div > div:nth-child(2) > div > div:nth-child(2) > div > div > div > p:nth-child(6)",
+                x: "120%",
+                y: -10,
+            },
+        ],
+    },
+    {
+        page: "/boks-dlia-resnyts-akrylovyi-na-12-planshetok-s-kryshkoi-pod-planshetku-y-otverstyem-dlia-lunky/",
+        cherries: [
+            {
+                id: 65,
+                block: "#main > div.wrapper > section > div.product__grid > div.product__column.product__column--left > div > div:nth-child(2) > div > div:nth-child(2) > div > div > div > p:nth-child(6)",
+                x: "120%",
+                y: -10,
+            },
+        ],
+    },
+    {
+        page: "/m-pro-size-uchebno-metodycheskoe-posobye-po-narashchyvanyiu-resnyts/2787/",
+        cherries: [
+            {
+                id: 66,
+                block: null,
+                x: "50%",
+                y: "50%",
+            },
+        ],
+    },
+    {
+        page: "/product-category/leshmejker-ru/",
+        cherries: [
+            {
+                id: 67,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/test-set-remuverov-vybery-svoi/",
+        cherries: [
+            {
+                id: 68,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/product/kiko-milano-joyful-holiday-oh-oh-oh-my-lips-kit-2/",
+        cherries: [
+            {
+                id: 69,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/kursy-kontenta/",
+        cherries: [
+            {
+                id: 70,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/1000-hrn/2178/",
+        cherries: [
+            {
+                id: 71,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/prohrama-loialnosti-mary-lash-pro/?utm_source=&utm_medium=&utm_campaign=&utm_content=ribbon",
+        cherries: [
+            {
+                id: 72,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/store-reviews/",
+        cherries: [
+            {
+                id: 73,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "https://marylash.pro/product/shapochki-belye-100-sht/",
+        cherries: [
+            {
+                id: 74,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/haid-po-kleiu-v-podarok/",
+        cherries: [
+            {
+                id: 75,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/materyaly-y-aksessuary/",
+        cherries: [
+            {
+                id: 76,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/ventyliator-dlia-sushky-resnyts-rozovyi/",
+        cherries: [
+            {
+                id: 77,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/product-category/rashodnye-materialy/izolyacziya-nizhnih-resnicz/",
+        cherries: [
+            {
+                id: 78,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/product/nebulajzer-rozovyj-so-strazikom/",
+        cherries: [
+            {
+                id: 79,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/startovyi-nabor-dlia-lamymeikera/",
+        cherries: [
+            {
+                id: 80,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/nabor-raskhodnykh-materyalov-gold/",
+        cherries: [
+            {
+                id: 81,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/product/kontejner-dlya-sterilizaczii-i-dezinfekczii-instrumentov/",
+        cherries: [
+            {
+                id: 82,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/resnytsy-blond-honey-brown-volume-lashes-007-m-mix-6-12/",
+        cherries: [
+            {
+                id: 83,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/product-category/rashodnye-materialy/prostyni/",
+        cherries: [
+            {
+                id: 84,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/startovyi-nabor-dlia-leshmeikera/",
+        cherries: [
+            {
+                id: 85,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
+    {
+        page: "/policy/",
+        cherries: [
+            {
+                id: 86,
+                block: null,
+                x: "50%",
+                y: 100,
+            },
+        ],
+    },
 ];
-
-// Заходите на Google Apps Script.
-
-// Створюєте новий проект.
-
-// Пишете код:
-
-// js
-// function doPost(e) {
-//   var data = JSON.parse(e.postData.contents);
-//   MailApp.sendEmail("manager@example.com",
-//     "Звіт по вишеньках",
-//     "Користувач " + data.user + " знайшов " + data.found + " вишеньок"
-//   );
-//   return ContentService.createTextOutput("OK");
-// }
-// Публікуєте як Web App (Deploy → New Deployment → Web App).
-
-// Отримуєте URL, наприклад: https://script.google.com/macros/s/AKfycbx1234567890/exec
