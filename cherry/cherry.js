@@ -478,10 +478,11 @@ document.addEventListener("DOMContentLoaded", function () {
         panel.id = "send-cherry";
         panel.innerHTML = `
             <span id="cherry-icon">
-                <img src="./image.png" alt="cherries" width="40px" height="40px" />
+                <img src="https://i.postimg.cc/m25smqQj/image.png" alt="cherries" width="40px" height="40px" />
             </span>
             <span>
-                <span id="cherry-counter">${cherriesFound}/${currentLimit}</span>
+                <!--<span id="cherry-counter">${cherriesFound}/${currentLimit}</span>-->
+                <span id="cherry-counter">${cherriesFound}/70</span>
                 <!--<span id="cherry-timer"></span>-->
             </span>
             <button id="send-btn">
@@ -515,7 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // cherry.textContent = "🍒";
                 const cherryImage = document.createElement("img");
-                cherryImage.src = "./image.png";
+                cherryImage.src = "https://i.postimg.cc/m25smqQj/image.png";
                 cherryImage.alt = "cherries";
                 cherryImage.width = 60;
                 cherryImage.height = 60;
