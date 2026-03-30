@@ -7,6 +7,7 @@ const CHERRY_API_BASE = window.CHERRY_API_BASE || "https://cherry-mail.applic.co
 const CHERRY_CLICK_ENDPOINT = `${CHERRY_API_BASE}/click-item`;
 const CHERRY_USER_ENDPOINT = `${CHERRY_API_BASE}/user-clicks`;
 const CHERRY_MAIL_ENDPOINT = window.CHERRY_MAIL_ENDPOINT || `${CHERRY_API_BASE}/send-email`;
+const CHERRY_CAPTCHA_ENABLED = false;
 const CHERRY_CAMPAIGN_START = new Date(2026, 3, 1, 0, 0, 0, 0);
 const CHERRY_CAMPAIGN_END = new Date(2026, 3, 10, 0, 0, 0, 0);
 const CHERRY_DAILY_LIMITS = {
@@ -239,6 +240,14 @@ function showCustomAlert(message) {
     };
 }
 
+function showSuccessAlert(message) {
+    const alertBox = document.getElementById("custom-alert");
+    document.getElementById("captcha-block").style.display = "none";
+    document.getElementById("success-block").style.display = "block";
+    document.getElementById("custom-alert-text").textContent = message;
+    alertBox.style.display = "flex";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     (async function () {
         let sendblock = false;
@@ -249,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
         injectCherryAlertMarkup();
 
         const userId = window.GLOBAL?.USER_ID;
-        // const userId = "test";
+        // const userId = "4990";
 
         if (!userId) {
             console.error("Cherry widget requires userId");
@@ -406,6 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         async function sendCherryResult() {
             const payload = {
+                userId,
                 subject: `Cherry result: ${userId}`,
                 text: [
                     `User ID: ${userId}`,
@@ -574,14 +584,20 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("send-cherry").addEventListener("click", async () => {
             if (sendblock) return;
             sendblock = true;
-            // alert("Дякуємо! Результат відправлено менеджеру!");
-            // const sendBtn = document.getElementById("send-btn");
-            // const svgIcon = sendBtn.querySelector("svg");
-            // const originalColor = svgIcon.getAttribute("fill");
-            // svgIcon.setAttribute("fill", "green");
-            // setTimeout(() => {
-            //     svgIcon.setAttribute("fill", originalColor);
-            // }, 3000);
+
+            if (!CHERRY_CAPTCHA_ENABLED) {
+                try {
+                    await sendCherryResult();
+                    showSuccessAlert("Вітаю! 🎉 Твої результати зараховано.");
+                    console.log("Cherry send complete");
+                } catch (error) {
+                    console.error("Cherry send failed:", error.message);
+                } finally {
+                    sendblock = false;
+                }
+
+                return;
+            }
 
             const res = showCustomAlert("Вітаю! 🎉Твої результати зараховано.");
             console.log(res);
@@ -589,8 +605,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         });
 
-        document.getElementById("refresh-captcha").addEventListener("click", generateCaptcha);
-        document.getElementById("captcha-submit").addEventListener("click", verifyCaptcha);
+        if (CHERRY_CAPTCHA_ENABLED) {
+            document.getElementById("refresh-captcha").addEventListener("click", generateCaptcha);
+            document.getElementById("captcha-submit").addEventListener("click", verifyCaptcha);
+        }
         document.getElementById("custom-alert-close").addEventListener("click", () => {
             document.getElementById("custom-alert").style.display = "none";
         });

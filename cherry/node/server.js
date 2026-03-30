@@ -9,8 +9,17 @@ loadEnvFile();
 const PORT = process.env.PORT || 8080;
 const LOG_FILE = path.join(__dirname, "mail.log");
 const DATA_FILE = path.join(__dirname, "users.json");
+const HOROSHOP_AUTH_URL = process.env.HOROSHOP_AUTH_URL || "https://marylash.pro/api/auth/";
+const HOROSHOP_USERS_EXPORT_URL = process.env.HOROSHOP_USERS_EXPORT_URL || "https://marylash.pro/api/users/export/";
 
 initializeStorage();
+refreshUsersFromHoroshop().catch((error) => {
+    writeLog({
+        timestamp: new Date().toISOString(),
+        status: "horoshop-sync-error",
+        error: error.message,
+    });
+});
 
 function loadEnvFile() {
     const envPath = path.join(__dirname, ".env");
@@ -182,6 +191,7 @@ function getUserRecord(users, userId) {
     return (
         existing || {
             userId: normalizedUserId,
+            email: null,
             clickedItems: [],
             updatedAt: null,
         }
@@ -216,6 +226,89 @@ function normalizeClickedItems(clickedItems) {
         .filter(Boolean);
 }
 
+async function postJson(url, payload) {
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+
+    const rawText = await response.text();
+    let data = {};
+
+    try {
+        data = rawText ? JSON.parse(rawText) : {};
+    } catch {
+        throw new Error(`Invalid JSON response from ${url}`);
+    }
+
+    if (!response.ok) {
+        throw new Error(data?.message || rawText || `Request failed for ${url}`);
+    }
+
+    return data;
+}
+
+async function getHoroshopToken() {
+    const login = String(process.env.HOROSHOP_LOGIN || "").trim();
+    const password = String(process.env.HOROSHOP_PASSWORD || "").trim();
+
+    if (!login || !password) {
+        throw new Error("Missing HOROSHOP_LOGIN or HOROSHOP_PASSWORD in environment");
+    }
+
+    const data = await postJson(HOROSHOP_AUTH_URL, {
+        login,
+        password,
+    });
+
+    if (data.status !== "OK") {
+        throw new Error(`Failed to get Horoshop token: ${JSON.stringify(data)}`);
+    }
+
+    return data.response.token;
+}
+
+async function refreshUsersFromHoroshop() {
+    const token = await getHoroshopToken();
+    const data = await postJson(HOROSHOP_USERS_EXPORT_URL, { token });
+
+    if (data.status !== "OK") {
+        throw new Error(`Failed to get Horoshop users: ${JSON.stringify(data)}`);
+    }
+
+    const exportedUsers = Array.isArray(data.response?.users) ? data.response.users : [];
+    const users = readUsers();
+
+    exportedUsers.forEach((exportedUser) => {
+        const normalizedUserId = normalizeUserId(exportedUser.id);
+
+        if (!normalizedUserId) {
+            return;
+        }
+
+        const user = getUserRecord(users, normalizedUserId);
+        user.email = exportedUser.email || user.email || null;
+        users[normalizedUserId] = user;
+    });
+
+    writeUsers(users);
+    return users;
+}
+
+function getUserEmailById(userId) {
+    const normalizedUserId = normalizeUserId(userId);
+
+    if (!normalizedUserId) {
+        return null;
+    }
+
+    const users = readUsers();
+    return users[normalizedUserId]?.email || null;
+}
+
 function saveClickedItem({ userId, itemId, page }) {
     const normalizedUserId = normalizeUserId(userId);
 
@@ -245,6 +338,7 @@ function saveClickedItem({ userId, itemId, page }) {
     }
 
     user.clickedItems = normalizedClickedItems;
+    user.email = user.email || null;
     user.updatedAt = new Date().toISOString();
     users[normalizedUserId] = user;
     writeUsers(users);
@@ -262,6 +356,7 @@ function getClickedItems(userId) {
     const users = readUsers();
     const user = getUserRecord(users, normalizedUserId);
     user.clickedItems = normalizeClickedItems(user.clickedItems);
+    user.email = user.email || null;
     users[normalizedUserId] = user;
     writeUsers(users);
     return user;
@@ -272,6 +367,7 @@ function getAllUsers() {
 
     Object.keys(users).forEach((userId) => {
         users[userId].clickedItems = normalizeClickedItems(users[userId].clickedItems);
+        users[userId].email = users[userId].email || null;
     });
 
     writeUsers(users);
@@ -289,15 +385,23 @@ const server = http.createServer(async (req, res) => {
 
         try {
             const payload = await parseJsonBody(req);
-            const info = await sendEmail(payload);
+            await refreshUsersFromHoroshop();
+            const userEmail = getUserEmailById(payload.userId);
+            const info = await sendEmail({
+                subject: payload.subject,
+                text: [payload.text, `User email: ${userEmail || "not found"}`].filter(Boolean).join("\n"),
+                html: payload.html,
+            });
 
             writeLog({
                 timestamp: startedAt,
                 status: "success",
                 to: process.env.MAIL_TO || null,
                 cc: process.env.MAIL_CC || null,
+                userId: payload.userId || null,
+                userEmail,
                 subject: payload.subject || null,
-                text: payload.text || null,
+                text: [payload.text, `User email: ${userEmail || "not found"}`].filter(Boolean).join("\n"),
                 html: payload.html || null,
                 messageId: info.messageId,
             });

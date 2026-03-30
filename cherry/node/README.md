@@ -37,6 +37,10 @@ SMTP_PASS=your-smtp-password
 MAIL_FROM=no-reply@example.com
 MAIL_TO=manager@example.com
 MAIL_CC=
+HOROSHOP_LOGIN=
+HOROSHOP_PASSWORD=
+HOROSHOP_AUTH_URL=https://marylash.pro/api/auth/
+HOROSHOP_USERS_EXPORT_URL=https://marylash.pro/api/users/export/
 ```
 
 5. Start the server:
@@ -58,6 +62,7 @@ Response:
     "success": true,
     "user": {
         "userId": "user-123",
+        "email": "user@example.com",
         "clickedItems": [
             {
                 "itemId": 1,
@@ -96,6 +101,7 @@ Response:
     "users": {
         "user-123": {
             "userId": "user-123",
+            "email": "user@example.com",
             "clickedItems": [
                 {
                     "itemId": 12,
@@ -115,6 +121,7 @@ Saved click format in `users.json`:
 {
     "user-123": {
         "userId": "user-123",
+        "email": "user@example.com",
         "clickedItems": [
             {
                 "itemId": 12,
@@ -135,12 +142,13 @@ Request body:
 
 ```json
 {
+    "userId": "user-123",
     "subject": "Hello",
     "text": "Test message"
 }
 ```
 
-The server sends this email to `MAIL_TO` from `.env` and adds `MAIL_CC` as a copy only when it is not empty. `MAIL_CC` is optional. The frontend does not choose recipients.
+The server sends this email to `MAIL_TO` from `.env` and adds `MAIL_CC` as a copy only when it is not empty. Before sending, it refreshes the Horoshop user export, finds the user email by `userId`, stores it in `users.json`, and appends that email to the sent message.
 
 You can also send `html` instead of `text`, or send both.
 
