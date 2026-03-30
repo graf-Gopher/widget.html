@@ -2,7 +2,8 @@ function delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const CHERRY_API_BASE = window.CHERRY_API_BASE || "https://mlnd.order.home.under-tree-e.com";
+// const CHERRY_API_BASE = window.CHERRY_API_BASE || "https://mlnd.order.home.under-tree-e.com";
+const CHERRY_API_BASE = window.CHERRY_API_BASE || "https://cherry-mail.applic.com.ua";
 const CHERRY_CLICK_ENDPOINT = `${CHERRY_API_BASE}/click-item`;
 const CHERRY_USER_ENDPOINT = `${CHERRY_API_BASE}/user-clicks`;
 const CHERRY_MAIL_ENDPOINT = window.CHERRY_MAIL_ENDPOINT || `${CHERRY_API_BASE}/send-email`;
@@ -73,6 +74,8 @@ function injectCherryAlertStyles() {
             cursor: pointer;
             font-weight: bold;
             font-family: sans-serif;
+            font-size: 16px;
+            color: #cf125e;
         }
 
         .custom-alert {
@@ -479,9 +482,12 @@ document.addEventListener("DOMContentLoaded", function () {
             </span>
             <span>
                 <span id="cherry-counter">${cherriesFound}/${currentLimit}</span>
-                <span id="cherry-timer"></span>
+                <!--<span id="cherry-timer"></span>-->
             </span>
-            <button id="send-btn"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#cf125e"><path d="M0 0h24v24H0z" fill="none"/><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+            <button id="send-btn">
+            <!--<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#cf125e"><path d="M0 0h24v24H0z" fill="none"/><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>-->
+            Зберегти
+            </button>
         `;
         document.body.appendChild(panel);
         updateTimer();
