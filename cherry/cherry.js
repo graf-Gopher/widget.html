@@ -301,7 +301,8 @@ document.addEventListener("DOMContentLoaded", function () {
         function updateCounter() {
             const counter = document.getElementById("cherry-counter");
             if (counter) {
-                counter.textContent = `${cherriesFound}/${currentLimit}`;
+                // counter.textContent = `${cherriesFound}/${currentLimit}`;
+                counter.textContent = `${cherriesFound}/70`;
             }
         }
 
