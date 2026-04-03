@@ -11,15 +11,17 @@ const CHERRY_CAPTCHA_ENABLED = false;
 const CHERRY_CAMPAIGN_START = new Date(2026, 3, 1, 0, 0, 0, 0);
 const CHERRY_CAMPAIGN_END = new Date(2026, 3, 10, 0, 0, 0, 0);
 const CHERRY_DAILY_LIMITS = {
+    // You can also override the limit during a day:
+    // "2026-04-01 12:00": 15,
     "2026-04-01": 15,
     "2026-04-02": 20,
     "2026-04-03": 30,
-    "2026-04-04": 35,
-    "2026-04-05": 42,
-    "2026-04-06": 47,
-    "2026-04-07": 62,
-    "2026-04-08": 67,
-    "2026-04-09": 70,
+    "2026-04-04 04:00": 35,
+    "2026-04-05 04:00": 42,
+    "2026-04-06 04:00": 47,
+    "2026-04-07 04:00": 62,
+    "2026-04-08 04:00": 67,
+    "2026-04-09 04:00": 70,
 };
 
 function injectCherryAlertStyles() {
@@ -276,8 +278,46 @@ document.addEventListener("DOMContentLoaded", function () {
             return `${year}-${month}-${day}`;
         }
 
+        function parseCampaignLimitKey(key) {
+            const match = /^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/.exec(key);
+
+            if (!match) {
+                return null;
+            }
+
+            const [, year, month, day, hours = "00", minutes = "00", seconds = "00"] = match;
+            const date = new Date(Number(year), Number(month) - 1, Number(day), Number(hours), Number(minutes), Number(seconds), 0);
+
+            if (date.getFullYear() !== Number(year) || date.getMonth() !== Number(month) - 1 || date.getDate() !== Number(day)) {
+                return null;
+            }
+
+            return {
+                dateKey: `${year}-${month}-${day}`,
+                timestamp: date.getTime(),
+            };
+        }
+
         function getCampaignLimit(date) {
-            return CHERRY_DAILY_LIMITS[formatCampaignDateKey(date)] || 0;
+            const currentDateKey = formatCampaignDateKey(date);
+            const currentTimestamp = date.getTime();
+            let matchedLimit = 0;
+            let matchedTimestamp = -Infinity;
+
+            Object.entries(CHERRY_DAILY_LIMITS).forEach(([key, limit]) => {
+                const parsedKey = parseCampaignLimitKey(key);
+
+                if (!parsedKey || parsedKey.dateKey !== currentDateKey || parsedKey.timestamp > currentTimestamp) {
+                    return;
+                }
+
+                if (parsedKey.timestamp >= matchedTimestamp) {
+                    matchedTimestamp = parsedKey.timestamp;
+                    matchedLimit = Number(limit) || 0;
+                }
+            });
+
+            return matchedLimit;
         }
 
         function isCampaignActive(date) {
