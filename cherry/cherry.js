@@ -628,8 +628,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!CHERRY_CAPTCHA_ENABLED) {
                 try {
-                    await sendCherryResult();
                     showSuccessAlert("Вітаю! 🎉 Твої результати зараховано.");
+                    await sendCherryResult();
                     console.log("Cherry send complete");
                 } catch (error) {
                     console.error("Cherry send failed:", error.message);
